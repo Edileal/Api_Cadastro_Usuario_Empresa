@@ -22,11 +22,6 @@ namespace CadastroUsuarioEmpresa.Services
             _mapper = mapper;
         }
 
-        public Task Delete(int request)
-        {
-            throw new NotImplementedException();
-        }
-
         public Task<IEnumerable<EmpresaResponse>> Get()
         {
             throw new NotImplementedException();
@@ -43,6 +38,10 @@ namespace CadastroUsuarioEmpresa.Services
         }
 
         public Task<EmpresaResponse> Put(EmpresaRequest request, int? id)
+        {
+            throw new NotImplementedException();
+        }
+        public Task Delete(int request)
         {
             throw new NotImplementedException();
         }

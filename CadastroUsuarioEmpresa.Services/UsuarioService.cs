@@ -61,9 +61,9 @@ namespace CadastroUsuarioEmpresa.Services
             return _mapper.Map<UsuarioResponse>(usuarioCadastrado);
         }
 
-        public async Task Delete(int id)
+        public async Task Delete(int request)
         {
-            var usuarioBancoDeDados = await _usuarioRepository.GetById((int)id);
+            var usuarioBancoDeDados = await _usuarioRepository.GetById((int)request);
 
             if (usuarioBancoDeDados != null)
             {

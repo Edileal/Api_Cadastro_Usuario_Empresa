@@ -15,7 +15,8 @@ namespace CadastroUsuarioEmpresa.CrossCutting.DependencyInjection
             var config = new AutoMapper.MapperConfiguration(cnf =>
             {
                 cnf.AddProfile(new UsuarioEntitiesToContractMap());
-                cnf.AddProfile(new EmpresaEntitiesToContractMap());//conferir 
+                cnf.AddProfile(new EmpresaEntitiesToContractMap());
+                cnf.AddProfile(new EnderecoEntitiesToContractMap());
             });
 
             var mapConfiguration = config.CreateMapper();
