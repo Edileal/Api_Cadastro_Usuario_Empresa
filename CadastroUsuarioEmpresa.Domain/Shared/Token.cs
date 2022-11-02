@@ -11,14 +11,14 @@ namespace CadastroUsuarioEmpresa.Domain.Shared
         public static string GenerateToken(UsuarioEntities user)
         {
             var tokenHandler = new JwtSecurityTokenHandler();
-            var key = Encoding.ASCII.GetBytes("FW18N7OyCGZNlbI/j73gIMXpXDhbJPVHNq72/pSw");
+            var key = Encoding.ASCII.GetBytes("ReCebaaaaaaaaaa4854857319fjfaihh");
             var tokenDescriptor = new SecurityTokenDescriptor
             {
                 Subject = new ClaimsIdentity(new Claim[]
                 {
-                    new Claim(ClaimTypes.GivenName, user.Cpf.ToString()),
+                    new Claim(ClaimTypes.Email, user.Email.ToString()),
                     new Claim(ClaimTypes.SerialNumber, user.Id.ToString()),
-                    new Claim(ClaimTypes.Role, "Administrador")
+                    new Claim(ClaimTypes.Role, "Role")
                 }),
 
                 Expires = DateTime.Now.AddHours(8),

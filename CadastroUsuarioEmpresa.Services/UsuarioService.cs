@@ -10,11 +10,13 @@ namespace CadastroUsuarioEmpresa.Services
     public class UsuarioService : IUsuarioService
     {
         public readonly IUsuarioRepository _usuarioRepository;
+        public readonly IEnderecoRepository _enderecoRepository;
         public readonly IMapper _mapper;
 
-        public UsuarioService(IUsuarioRepository usuarioRepository, IMapper mapper)
+        public UsuarioService(IUsuarioRepository usuarioRepository, IEnderecoRepository enderecoRepository, IMapper mapper)
         {
             _usuarioRepository = usuarioRepository;
+            _enderecoRepository = enderecoRepository;
             _mapper = mapper;
         }
 
