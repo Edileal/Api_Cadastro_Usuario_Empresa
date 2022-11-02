@@ -1,5 +1,7 @@
 ﻿using AutoMapper;
 using CadastroUsuarioEmpresa.Domain.Contracts.Empresa;
+using CadastroUsuarioEmpresa.Domain.Contracts.Usuario;
+using CadastroUsuarioEmpresa.Domain.Entities;
 using CadastroUsuarioEmpresa.Domain.Interfaces.Repository;
 using CadastroUsuarioEmpresa.Domain.Interfaces.Services;
 using System;
@@ -22,28 +24,46 @@ namespace CadastroUsuarioEmpresa.Services
             _mapper = mapper;
         }
 
-        public Task<IEnumerable<EmpresaResponse>> Get()
+        public async Task<IEnumerable<EmpresaResponse>> Get()
         {
-            throw new NotImplementedException();
+            var listaEmpresasBaseDados = await _empresaRepository.Get();
+
+            return _mapper.Map<IEnumerable<EmpresaResponse>>(listaEmpresasBaseDados);
         }
 
-        public Task<EmpresaResponse> GetById(int id)
+        public async Task<EmpresaResponse> GetById(int id)
         {
-            throw new NotImplementedException();
+            var empresaRetornoBanco = await _empresaRepository.GetById(id);
+
+            return _mapper.Map<EmpresaResponse>(empresaRetornoBanco);
         }
 
-        public Task<EmpresaResponse> Post(EmpresaRequest request)
+        public async Task<EmpresaResponse> Post(EmpresaRequest request)
         {
-            throw new NotImplementedException();
+            var empresaEntity = _mapper.Map<EmpresaEntities>(request);
+            var empresaCadastrada = _empresaRepository.Post(empresaEntity);
+
+            return _mapper.Map<EmpresaResponse>(empresaCadastrada);
         }
 
-        public Task<EmpresaResponse> Put(EmpresaRequest request, int? id)
+        public async Task<EmpresaResponse> Put(EmpresaRequest request, int? id)
         {
-            throw new NotImplementedException();
+            var empresaBancoDeDados = await _empresaRepository.GetById((int)id);
+
+            empresaBancoDeDados.NomeFantasia = request.NomeFantasia;
+
+            var empresaAtualizada = await _empresaRepository.Put(empresaBancoDeDados, null);
+
+            return _mapper.Map<EmpresaResponse>(empresaAtualizada);
         }
-        public Task Delete(int request)
+        public async Task Delete(int request)
         {
-            throw new NotImplementedException();
+            var empresaBancoDeDados = await _empresaRepository.GetById((int)request);
+
+            if (empresaBancoDeDados != null)
+            {
+                await _empresaRepository.Delete(empresaBancoDeDados);
+            }
         }
     }
 }
