@@ -10,6 +10,6 @@ namespace CadastroUsuarioEmpresa.Domain.Interfaces.Repository
     public interface IUsuarioRepository : IBaseCRUD<UsuarioEntities, UsuarioEntities>
     {
         Task Delete(UsuarioEntities request);
-        Task<UsuarioEntities> GetByCpf(string cpf);
+        Task<UsuarioEntities> GetByEmail(string email);
     }
 }

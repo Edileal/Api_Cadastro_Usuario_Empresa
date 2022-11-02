@@ -8,8 +8,10 @@ namespace CadastroUsuarioEmpresa.Domain.Entities
 {
     public class EmpresaEntities
     {
-        public string Nome { get; set; }
+        public int Id { get; set; }
+        public string? Nome { get; set; }
         public string NomeFantasia { get; set; }
+        public int EnderecoId { get; set; }
         public EnderecoEntities Endereco { get; set; }
     }
 }

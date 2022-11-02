@@ -1,12 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using CadastroUsuarioEmpresa.Domain.Interfaces.Repository;
+using CadastroUsuarioEmpresa.Repository;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace CadastroUsuarioEmpresa.CrossCutting.DependencyInjection
 {
-    public class ConfigureRepository
+    public static class ConfigureRepository
     {
+        public static void ConfigureDependenciesRepository(IServiceCollection serviceCollection, string connectionString)
+        {
+            serviceCollection.AddScoped<IUsuarioRepository, UsuarioRepository>();
+            serviceCollection.AddScoped<IEmpresaRepository, EmpresaRepository>();
+            serviceCollection.AddScoped<IEnderecoRepository, EnderecoRepository>();
+            serviceCollection.AddDbContext<CadastroUsuarioEmpresaContext>(options => options.UseSqlServer(connectionString));
+        }
     }
 }

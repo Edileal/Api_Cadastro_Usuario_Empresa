@@ -1,12 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using AutoMapper;
+using CadastroUsuarioEmpresa.Domain.Contracts.Usuario;
+using CadastroUsuarioEmpresa.Domain.Entities;
 
 namespace CadastroUsuarioEmpresa.CrossCutting.Mappers
 {
-    public class UsuarioEntitiesToContractMap
+    public class UsuarioEntitiesToContractMap : Profile
     {
+        public UsuarioEntitiesToContractMap()
+        {
+            CreateMap<UsuarioEntities, UsuarioRequest>().ReverseMap();
+            CreateMap<UsuarioEntities, UsuarioCadastraRequest>().ReverseMap();
+            CreateMap<UsuarioEntities, UsuarioResponse>().ReverseMap();
+        }
     }
 }

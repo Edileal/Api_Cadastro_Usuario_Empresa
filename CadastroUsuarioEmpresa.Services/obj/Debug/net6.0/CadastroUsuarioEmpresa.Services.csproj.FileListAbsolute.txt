@@ -1,0 +1,15 @@
+C:\Users\User\Documents\CadastroUsuarioEmpresa\CadastroUsuarioEmpresa.Services\bin\Debug\net6.0\CadastroUsuarioEmpresa.Services.deps.json
+C:\Users\User\Documents\CadastroUsuarioEmpresa\CadastroUsuarioEmpresa.Services\bin\Debug\net6.0\CadastroUsuarioEmpresa.Services.dll
+C:\Users\User\Documents\CadastroUsuarioEmpresa\CadastroUsuarioEmpresa.Services\bin\Debug\net6.0\CadastroUsuarioEmpresa.Services.pdb
+C:\Users\User\Documents\CadastroUsuarioEmpresa\CadastroUsuarioEmpresa.Services\bin\Debug\net6.0\CadastroUsuarioEmpresa.Domain.dll
+C:\Users\User\Documents\CadastroUsuarioEmpresa\CadastroUsuarioEmpresa.Services\bin\Debug\net6.0\CadastroUsuarioEmpresa.Domain.pdb
+C:\Users\User\Documents\CadastroUsuarioEmpresa\CadastroUsuarioEmpresa.Services\obj\Debug\net6.0\CadastroUsuarioEmpresa.Services.csproj.AssemblyReference.cache
+C:\Users\User\Documents\CadastroUsuarioEmpresa\CadastroUsuarioEmpresa.Services\obj\Debug\net6.0\CadastroUsuarioEmpresa.Services.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\Documents\CadastroUsuarioEmpresa\CadastroUsuarioEmpresa.Services\obj\Debug\net6.0\CadastroUsuarioEmpresa.Services.AssemblyInfoInputs.cache
+C:\Users\User\Documents\CadastroUsuarioEmpresa\CadastroUsuarioEmpresa.Services\obj\Debug\net6.0\CadastroUsuarioEmpresa.Services.AssemblyInfo.cs
+C:\Users\User\Documents\CadastroUsuarioEmpresa\CadastroUsuarioEmpresa.Services\obj\Debug\net6.0\CadastroUsuarioEmpresa.Services.csproj.CoreCompileInputs.cache
+C:\Users\User\Documents\CadastroUsuarioEmpresa\CadastroUsuarioEmpresa.Services\obj\Debug\net6.0\CadastroUsuarioEmpresa.Services.csproj.CopyComplete
+C:\Users\User\Documents\CadastroUsuarioEmpresa\CadastroUsuarioEmpresa.Services\obj\Debug\net6.0\CadastroUsuarioEmpresa.Services.dll
+C:\Users\User\Documents\CadastroUsuarioEmpresa\CadastroUsuarioEmpresa.Services\obj\Debug\net6.0\refint\CadastroUsuarioEmpresa.Services.dll
+C:\Users\User\Documents\CadastroUsuarioEmpresa\CadastroUsuarioEmpresa.Services\obj\Debug\net6.0\CadastroUsuarioEmpresa.Services.pdb
+C:\Users\User\Documents\CadastroUsuarioEmpresa\CadastroUsuarioEmpresa.Services\obj\Debug\net6.0\ref\CadastroUsuarioEmpresa.Services.dll

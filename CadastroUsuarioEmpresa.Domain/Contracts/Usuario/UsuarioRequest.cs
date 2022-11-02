@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CadastroUsuarioEmpresa.Domain.Contracts.Endereco;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,6 +14,8 @@ namespace CadastroUsuarioEmpresa.Domain.Contracts.Usuario
         public string Email { get; set; }
         public string Senha { get; set; }
         public string Cpf { get; set; }
+        public string Role { get; set; }
         public string DataNascimento { get; set; }
+        public EnderecoRequest Endereco { get; set; }
     }
 }

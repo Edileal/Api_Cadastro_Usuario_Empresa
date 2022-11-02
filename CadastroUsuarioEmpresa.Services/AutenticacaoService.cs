@@ -1,11 +1,6 @@
 ﻿using CadastroUsuarioEmpresa.Domain.Interfaces.Repository;
 using CadastroUsuarioEmpresa.Domain.Interfaces.Services;
 using CadastroUsuarioEmpresa.Domain.Shared;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CadastroUsuarioEmpresa.Services
 {
@@ -20,7 +15,7 @@ namespace CadastroUsuarioEmpresa.Services
 
         public async Task<string> Login(string nome, string senha) //método de fazer login que solicita a senha e nome usados no cadastro.
         {
-            var result = await _usuarioRepository.GetByCpf(nome);
+            var result = await _usuarioRepository.GetByEmail(nome);
 
             var _senhaCriptografada = Cryptography.Encrypt(senha);
 
