@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper.Collection" Version="9.0.0" />
+    <PackageReference Include="EntityFramework" Version="6.4.4" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.10" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer.Design" Version="1.1.6" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="6.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CadastroUsuarioEmpresa.Domain\CadastroUsuarioEmpresa.Domain.csproj" />
+    <ProjectReference Include="..\CadastroUsuarioEmpresa.Repository\CadastroUsuarioEmpresa.Repository.csproj" />
+    <ProjectReference Include="..\CadastroUsuarioEmpresa.Services\CadastroUsuarioEmpresa.Services.csproj" />
+  </ItemGroup>
+
+</Project>
