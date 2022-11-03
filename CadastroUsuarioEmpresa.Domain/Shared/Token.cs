@@ -18,7 +18,7 @@ namespace CadastroUsuarioEmpresa.Domain.Shared
                 {
                     new Claim(ClaimTypes.Email, user.Email.ToString()),
                     new Claim(ClaimTypes.SerialNumber, user.Id.ToString()),
-                    new Claim(ClaimTypes.Role, "Role")
+                    new Claim(ClaimTypes.Role, "Admin")
                 }),
 
                 Expires = DateTime.Now.AddHours(8),

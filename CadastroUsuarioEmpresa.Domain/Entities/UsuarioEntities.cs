@@ -14,7 +14,7 @@ namespace CadastroUsuarioEmpresa.Domain.Entities
         public string Email { get; set; }
         public string Senha { get; set; }
         public string Cpf { get; set; }
-        public string Role { get; set; }
+        public string Admin { get; set; }
         public string DataNascimento { get; set; }
         public int EnderecoId { get; set; }
         public EnderecoEntities Endereco { get; set; }
