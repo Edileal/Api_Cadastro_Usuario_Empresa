@@ -24,7 +24,7 @@ namespace CadastroUsuarioEmpresa.Services
                 return Token.GenerateToken(result);
             }
 
-            return string.Empty;
+            throw new Exception("Login inválido");
         }
     }
 }

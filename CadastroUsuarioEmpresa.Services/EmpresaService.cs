@@ -40,7 +40,37 @@ namespace CadastroUsuarioEmpresa.Services
 
         public async Task<EmpresaResponse> Post(EmpresaRequest request)
         {
+            
+            if(request.NomeFantasia == null)
+            {
+                throw new Exception("Nome fantasia inválido");
+            }
+            if (request.Endereco.Rua == null)
+            {
+                throw new Exception("Rua inválida");
+            }
+            if (request.Endereco.Bairro == null)
+            {
+                throw new Exception("Bairro inválido");
+            }
+            if (request.Endereco.Cep.Length != 8)
+            {
+                throw new Exception("Cep inválido");
+            }
+            if (request.Endereco.Cidade == null)
+            {
+                throw new Exception("Cidade inválida");
+            }
+            if (request.Endereco.Estado == null)
+            {
+                throw new Exception("Bairro inválido");
+            }
+            if (request.Endereco.Numero == null)
+            {
+                throw new Exception("Número inválido");
+            }
             var empresaEntity = _mapper.Map<EmpresaEntities>(request);
+
             var empresaCadastrada = _empresaRepository.Post(empresaEntity);
 
             return _mapper.Map<EmpresaResponse>(empresaCadastrada);
@@ -49,6 +79,11 @@ namespace CadastroUsuarioEmpresa.Services
         public async Task<EmpresaResponse> Put(EmpresaRequest request, int? id)
         {
             var empresaBancoDeDados = await _empresaRepository.GetById((int)id);
+
+            if(request.NomeFantasia == null)
+            {
+                throw new Exception("Insira um Nome fantasia válido");
+            }
 
             empresaBancoDeDados.NomeFantasia = request.NomeFantasia;
 

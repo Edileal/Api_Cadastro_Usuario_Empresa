@@ -16,14 +16,14 @@ namespace CadastroUsuarioEmpresa.Controllers
         }
 
         [HttpGet]
-        [Authorize(Roles = "Administrador")]
+        [Authorize(Roles = "Admin")]
         public async Task<IEnumerable<UsuarioResponse>> Get()
         {
             return await _usuarioService.Get();
         }
 
         [HttpGet("{id}")]
-        [Authorize(Roles = "Administrador")]
+        [Authorize(Roles = "Admin")]
         public async Task<UsuarioResponse> GetById(int id)
         {
             return await _usuarioService.GetById(id);

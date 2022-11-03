@@ -58,7 +58,7 @@ namespace CadastroUsuarioEmpresa.Repository.Migrations
                     Email = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Senha = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Cpf = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Admin = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Role = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     DataNascimento = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     EnderecoId = table.Column<int>(type: "int", nullable: false)
                 },

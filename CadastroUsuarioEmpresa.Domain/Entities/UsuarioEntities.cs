@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using CadastroUsuarioEmpresa.Domain.Enum;
 
 namespace CadastroUsuarioEmpresa.Domain.Entities
 {
@@ -14,7 +10,7 @@ namespace CadastroUsuarioEmpresa.Domain.Entities
         public string Email { get; set; }
         public string Senha { get; set; }
         public string Cpf { get; set; }
-        public string Admin { get; set; }
+        public RoleEnum Role { get; set; }
         public string DataNascimento { get; set; }
         public int EnderecoId { get; set; }
         public EnderecoEntities Endereco { get; set; }
