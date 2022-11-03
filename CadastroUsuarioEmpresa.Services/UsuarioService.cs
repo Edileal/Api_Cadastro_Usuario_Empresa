@@ -45,27 +45,37 @@ namespace CadastroUsuarioEmpresa.Services
                 throw new ArgumentException("Email inválido");
             }
 
-            if(usuarioRequest.Endereco.Rua == null)
+            if(await ValidarNome(usuarioRequest.Nome) == false)
+            {
+                throw new Exception("Nome inválido");
+            }
+
+            if (string.IsNullOrWhiteSpace(usuarioRequest.Endereco.Rua))
             {
                 throw new Exception("Rua inválida");
             }
-            if (usuarioRequest.Endereco.Bairro == null)
+
+            if (string.IsNullOrWhiteSpace(usuarioRequest.Endereco.Bairro))
             {
                 throw new Exception("Bairro inválido");
             }
-            if (usuarioRequest.Endereco.Cep.Length != 8)
+
+            if (await ValidarCep(usuarioRequest.Endereco.Cep) == false)
             {
                 throw new Exception("Cep inválido");
             }
-            if (usuarioRequest.Endereco.Cidade == null)
+
+            if (string.IsNullOrWhiteSpace(usuarioRequest.Endereco.Cidade))
             {
                 throw new Exception("Cidade inválida");
             }
-            if (usuarioRequest.Endereco.Estado == null)
+
+            if (string.IsNullOrWhiteSpace(usuarioRequest.Endereco.Estado))
             {
                 throw new Exception("Bairro inválido");
             }
-            if (usuarioRequest.Endereco.Numero == null)
+
+            if (string.IsNullOrWhiteSpace(usuarioRequest.Endereco.Numero))
             {
                 throw new Exception("Número inválido");
             }
@@ -75,13 +85,19 @@ namespace CadastroUsuarioEmpresa.Services
                 throw new Exception("Senha inválida");
             }
 
-            if(usuarioRequest.DataNascimento == null)
+            if (string.IsNullOrWhiteSpace(usuarioRequest.DataNascimento))
             {
                 throw new Exception("Data inválida");
             }
+
             if(await ValidarCpf(usuarioRequest.Cpf) == false)
             {
-                throw new Exception("Cpf inválido");
+                throw new Exception("Cpf inserido inválido");
+            }
+
+            if(await ValidarTelefone(usuarioRequest.Telefone) == false)
+            {
+                throw new Exception("Telefone inserido inválido");
             }
 
             var requestUsuarioEntities = _mapper.Map<UsuarioEntities>(usuarioRequest);
@@ -98,15 +114,46 @@ namespace CadastroUsuarioEmpresa.Services
             throw new NotImplementedException();
         }
 
-        public async Task<UsuarioResponse> Put(UsuarioRequest usuarioRequest, int? id)
+        public async Task<UsuarioResponse> Put(UsuarioRequest usuarioRequest, int? id) //falta verificações
         {
             var usuarioBancoDeDados = await _usuarioRepository.GetById((int)id);
 
+
+            Regex email = new Regex(@"[^@ \t\r\n]+@[^@ \t\r\n]+.[^@ \t\r\n]+");
+
+            if (!email.IsMatch(usuarioRequest.Email))
+            {
+                throw new ArgumentException("Email inválido");
+            }
+
+            if (await ValidarNome(usuarioRequest.Nome) == false)
+            {
+                throw new Exception("Nome inserido inválido");
+            }
             usuarioBancoDeDados.Nome = usuarioRequest.Nome;
 
-            var usuarioCadastrado = await _usuarioRepository.Put(usuarioBancoDeDados, null);
+            if (await ValidarCpf(usuarioRequest.Cpf) == false)
+            {
+                throw new Exception("Cpf inserido inválido");
+            }
+            usuarioBancoDeDados.Cpf = usuarioRequest.Cpf;
 
-            return _mapper.Map<UsuarioResponse>(usuarioCadastrado);
+            if (await ValidarTelefone(usuarioRequest.Telefone) == false)
+            {
+                throw new Exception("Telefone inserido inválido");
+            }
+            usuarioBancoDeDados.Telefone = usuarioRequest.Telefone;
+
+            if (usuarioRequest.DataNascimento == null)
+            {
+                throw new Exception("Data de nascimento inserida inválida");
+            }
+            usuarioBancoDeDados.DataNascimento = usuarioRequest.DataNascimento;
+
+
+            var usuarioAtualizado = await _usuarioRepository.Put(usuarioBancoDeDados, null);
+
+            return _mapper.Map<UsuarioResponse>(usuarioAtualizado);
         }
 
         public async Task Delete(int request)
@@ -120,20 +167,17 @@ namespace CadastroUsuarioEmpresa.Services
         }
 
         //Métodos de verificação
-        private async Task<bool> ValidarEmail(string email)
-        {
-            Regex regexEmail = new Regex(@"^(?("")("".+?""@)|(([0-9a-zA-Z]((.(?!.))|[-!#$%&'*+/=?^`{}|~\w]))(?<=[0-9a-zA-Z])@))(?([)([(\d{1,3}.){3}\d{1,3}])|(([0-9a-zA-Z][-\w][0-9a-zA-Z].)+[a-zA-Z]{2,6}))$");
 
-            if (email == null)
-            {
-                return false;
-            }
-            if (!regexEmail.IsMatch(email))
+        private async Task<bool> ValidarCep(string cep)
+        {
+            Regex regexCep = new Regex(@"^[0 - 9]{ 5}-[0 - 9]{ 3}$");
+            if (!regexCep.IsMatch(cep))
             {
                 return false;
             }
             return true;
         }
+
         private async Task<bool> ValidarNome(string nome)
         {
             if (nome == null || nome.Length < 3)
@@ -142,9 +186,19 @@ namespace CadastroUsuarioEmpresa.Services
             }
             return true;
         }
+
         private async Task<bool> ValidarSenha(string senha)
         {
             if(senha.Length < 8 && senha == null)
+            {
+                return false;
+            }
+            return true;
+        }
+        private async Task<bool> ValidarTelefone(string telefone)
+        {
+            Regex regexTelefone = new Regex(@"^\([1 - 9]{ 2}\) (?:[2 - 8] | 9[1 - 9])[0 - 9]{ 3}\-[0 - 9]{ 4}$");
+            if (!regexTelefone.IsMatch(telefone))
             {
                 return false;
             }

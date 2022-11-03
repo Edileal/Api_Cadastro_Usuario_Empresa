@@ -41,15 +41,15 @@ namespace CadastroUsuarioEmpresa.Services
         public async Task<EmpresaResponse> Post(EmpresaRequest request)
         {
             
-            if(request.NomeFantasia == null)
+            if (string.IsNullOrWhiteSpace(request.NomeFantasia))
             {
                 throw new Exception("Nome fantasia inválido");
             }
-            if (request.Endereco.Rua == null)
+            if (string.IsNullOrWhiteSpace(request.Endereco.Rua))
             {
                 throw new Exception("Rua inválida");
             }
-            if (request.Endereco.Bairro == null)
+            if (string.IsNullOrWhiteSpace(request.Endereco.Bairro))
             {
                 throw new Exception("Bairro inválido");
             }
@@ -57,21 +57,21 @@ namespace CadastroUsuarioEmpresa.Services
             {
                 throw new Exception("Cep inválido");
             }
-            if (request.Endereco.Cidade == null)
+            if (string.IsNullOrWhiteSpace(request.Endereco.Cidade))
             {
                 throw new Exception("Cidade inválida");
             }
-            if (request.Endereco.Estado == null)
+            if (string.IsNullOrWhiteSpace(request.Endereco.Estado))
             {
                 throw new Exception("Bairro inválido");
             }
-            if (request.Endereco.Numero == null)
+            if (string.IsNullOrWhiteSpace(request.Endereco.Numero))
             {
                 throw new Exception("Número inválido");
             }
             var empresaEntity = _mapper.Map<EmpresaEntities>(request);
 
-            var empresaCadastrada = _empresaRepository.Post(empresaEntity);
+            var empresaCadastrada = await _empresaRepository.Post(empresaEntity);
 
             return _mapper.Map<EmpresaResponse>(empresaCadastrada);
         }
@@ -86,6 +86,7 @@ namespace CadastroUsuarioEmpresa.Services
             }
 
             empresaBancoDeDados.NomeFantasia = request.NomeFantasia;
+            empresaBancoDeDados.Nome = request.Nome;
 
             var empresaAtualizada = await _empresaRepository.Put(empresaBancoDeDados, null);
 

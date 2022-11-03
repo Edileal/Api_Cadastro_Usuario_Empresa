@@ -8,5 +8,6 @@ namespace CadastroUsuarioEmpresa.Domain.Contracts.Empresa
 {
     public class EmpresaResponse : EmpresaRequest
     {
+        public string NomeFantasia { get; set; }
     }
 }
