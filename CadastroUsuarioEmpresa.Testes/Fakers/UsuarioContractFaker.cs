@@ -1,5 +1,6 @@
 ﻿using Bogus;
 using CadastroUsuarioEmpresa.Domain.Contracts.Usuario;
+using CadastroUsuarioEmpresa.Domain.Enum;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,7 +27,13 @@ namespace CadastroUsuarioEmpresa.Testes.Fakers
                 minhaLista.Add(new UsuarioResponse()
                 {
                     Id = i,
-                    Nome = Fake.Name.FirstName()
+                    Nome = Fake.Name.FirstName(),
+                    Telefone = Fake.Random.Int(11, 11).ToString(),
+                    Email = Fake.Person.Email,
+                    DataNascimento = Fake.Person.DateOfBirth,
+                    Role = Fake.PickRandom<RoleEnum>(),
+                    //Endereco = EnderecoFaker.GetEndereco()
+
                 });
             }
 
@@ -38,7 +45,11 @@ namespace CadastroUsuarioEmpresa.Testes.Fakers
             return new UsuarioResponse()
             {
                 Id = id,
-                Nome = Fake.Name.FirstName()
+                Nome = Fake.Name.FirstName(),
+                Telefone = Fake.Random.Int(11, 11).ToString(),
+                Email = Fake.Person.Email,
+                DataNascimento = Fake.Person.DateOfBirth,
+                Role = Fake.PickRandom<RoleEnum>(),
             };
         }
 
@@ -46,7 +57,11 @@ namespace CadastroUsuarioEmpresa.Testes.Fakers
         {
             return new UsuarioRequest
             {
-                Nome = Fake.Name.FirstName()
+                Nome = Fake.Name.FirstName(),
+                Telefone = Fake.Random.Int(11, 11).ToString(),
+                Email = Fake.Person.Email,
+                DataNascimento = Fake.Person.DateOfBirth,
+                Role = Fake.PickRandom<RoleEnum>(),
             };
         }
 
@@ -55,7 +70,11 @@ namespace CadastroUsuarioEmpresa.Testes.Fakers
             return new UsuarioCadastraRequest
             {
                 Nome = Fake.Name.FirstName(),
-                Senha = Fake.Name.FullName()
+                Senha = Fake.Name.FullName(),
+                Telefone = Fake.Random.Int(11, 11).ToString(),
+                Email = Fake.Person.Email,
+                DataNascimento = Fake.Person.DateOfBirth,
+                Role = Fake.PickRandom<RoleEnum>(),
             };
         }
 

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "CBpYLCyD+g8bHpTVmmUMCULqTvbEtGThS3+1ZMaXBY788xswOs5tGPTuj1aRzeoNePiIjsxeVb/lgPyot9rc2g==",
+  "dgSpecHash": "lRxoR9hE8lKUJ3FTZhV6Kvny1jX9fnn904uz6/s1VAvbp4Z5DwnVwCuHLk8X7pO6w9E5J1Ubm5pe+ZvoU+6Y6g==",
   "success": true,
-  "projectFilePath": "C:\\Users\\User\\Documents\\CadastroUsuarioEmpresa\\CadastroUsuarioEmpresa.Repository\\CadastroUsuarioEmpresa.Repository.csproj",
+  "projectFilePath": "c:\\Users\\User\\Documents\\CadastroUsuarioEmpresa\\CadastroUsuarioEmpresa.Repository\\CadastroUsuarioEmpresa.Repository.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\User\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\User\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",

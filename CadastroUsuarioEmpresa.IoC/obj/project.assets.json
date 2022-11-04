@@ -7077,11 +7077,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\User\\Documents\\CadastroUsuarioEmpresa\\CadastroUsuarioEmpresa.IoC\\CadastroUsuarioEmpresa.IoC.csproj",
+      "projectUniqueName": "c:\\Users\\User\\Documents\\CadastroUsuarioEmpresa\\CadastroUsuarioEmpresa.IoC\\CadastroUsuarioEmpresa.IoC.csproj",
       "projectName": "CadastroUsuarioEmpresa.IoC",
-      "projectPath": "C:\\Users\\User\\Documents\\CadastroUsuarioEmpresa\\CadastroUsuarioEmpresa.IoC\\CadastroUsuarioEmpresa.IoC.csproj",
+      "projectPath": "c:\\Users\\User\\Documents\\CadastroUsuarioEmpresa\\CadastroUsuarioEmpresa.IoC\\CadastroUsuarioEmpresa.IoC.csproj",
       "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\User\\Documents\\CadastroUsuarioEmpresa\\CadastroUsuarioEmpresa.IoC\\obj\\",
+      "outputPath": "c:\\Users\\User\\Documents\\CadastroUsuarioEmpresa\\CadastroUsuarioEmpresa.IoC\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -7098,8 +7098,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\User\\Documents\\CadastroUsuarioEmpresa\\CadastroUsuarioEmpresa.CrossCutting\\CadastroUsuarioEmpresa.CrossCutting.csproj": {
-              "projectPath": "C:\\Users\\User\\Documents\\CadastroUsuarioEmpresa\\CadastroUsuarioEmpresa.CrossCutting\\CadastroUsuarioEmpresa.CrossCutting.csproj"
+            "c:\\Users\\User\\Documents\\CadastroUsuarioEmpresa\\CadastroUsuarioEmpresa.CrossCutting\\CadastroUsuarioEmpresa.CrossCutting.csproj": {
+              "projectPath": "c:\\Users\\User\\Documents\\CadastroUsuarioEmpresa\\CadastroUsuarioEmpresa.CrossCutting\\CadastroUsuarioEmpresa.CrossCutting.csproj"
             }
           }
         }

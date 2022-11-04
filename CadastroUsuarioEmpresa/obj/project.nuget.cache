@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "seSX094VvGP+yH9tfpRf/icjJ4J4MBhWhkb9Z1BS9MeZQotGMXYOPYp3Yx6BcPhgph8T8KFLJqkMbnzVMBYf3Q==",
+  "dgSpecHash": "2gn8fEFiFSWuo0DmyhvugLrDlCOIJF9fI85O/5yCC1wqJ066FrbcjPbJkOmsEcYf0puDgpYqS6sKAhf9EP7/NQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\User\\Documents\\CadastroUsuarioEmpresa\\CadastroUsuarioEmpresa\\CadastroUsuarioEmpresa.csproj",
+  "projectFilePath": "c:\\Users\\User\\Documents\\CadastroUsuarioEmpresa\\CadastroUsuarioEmpresa\\CadastroUsuarioEmpresa.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\User\\.nuget\\packages\\automapper\\12.0.0\\automapper.12.0.0.nupkg.sha512",
     "C:\\Users\\User\\.nuget\\packages\\automapper.collection\\9.0.0\\automapper.collection.9.0.0.nupkg.sha512",

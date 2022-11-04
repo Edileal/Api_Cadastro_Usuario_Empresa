@@ -84,12 +84,11 @@ namespace CadastroUsuarioEmpresa.Services
             {
                 throw new Exception("Número inválido");
             }
-            if (usuarioRequest.Senha.Length < 8 & usuarioRequest.Senha == null)
-                throw new Exception("Senha inválida");
-            /*if(await ValidarSenha(usuarioRequest.Senha) == false)
+
+            if(await ValidarSenha(usuarioRequest.Senha) == false)
             {
-                throw new Exception("Senha inválida");
-            }*/
+                throw new Exception("Senha inserida inválida");
+            }
 
             if (usuarioRequest.DataNascimento == null)
             {
@@ -209,16 +208,43 @@ namespace CadastroUsuarioEmpresa.Services
 
         private async Task<bool> ValidarSenha(string senha) //testar senha no swagger. 
         {
-            if(senha.Length < 8 && senha == null)
+            var hasNumber = new Regex(@"[0-9]+");
+            var hasUpperChar = new Regex(@"[A-Z]+");
+            var hasMiniMaxChars = new Regex(@".{8,15}");
+            var hasLowerChar = new Regex(@"[a-z]+");
+            var hasSymbols = new Regex(@"[!@#$%^&*()_+=\[{\]};:<>|./?,-]");
+
+            if (!hasLowerChar.IsMatch(senha))
             {
                 return false;
             }
+            if (!hasUpperChar.IsMatch(senha))
+            {
+                return false;
+            }
+            if (!hasMiniMaxChars.IsMatch(senha))
+            {
+
+                return false;
+            }
+            if (!hasNumber.IsMatch(senha))
+            {
+
+                return false;
+            }
+
+            if (!hasSymbols.IsMatch(senha))
+            {
+
+                return false;
+            }
+
             return true;
         }
         private async Task<bool> ValidarTelefone(string telefone)
         {
-            Regex regexTelefone = new Regex(@"^\([1 - 9]{ 2}\) (?:[2 - 8] | 9[1 - 9])[0 - 9]{ 3}\-[0 - 9]{ 4}$");
-            if (!regexTelefone.IsMatch(telefone))
+            Regex regexTelefone = new Regex(@"^\([1-9]{2}\)\s?(?:[2-8]|9[1-9])[0-9]{3}\-?[0-9]{4}$");
+            if (!regexTelefone.IsMatch(telefone)) 
             {
                 return false;
             }
