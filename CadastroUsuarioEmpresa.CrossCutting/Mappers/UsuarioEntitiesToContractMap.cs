@@ -11,6 +11,7 @@ namespace CadastroUsuarioEmpresa.CrossCutting.Mappers
             CreateMap<UsuarioEntities, UsuarioRequest>().ReverseMap();
             CreateMap<UsuarioEntities, UsuarioCadastraRequest>().ReverseMap();
             CreateMap<UsuarioEntities, UsuarioResponse>().ReverseMap();
+            CreateMap<UsuarioEntities, UsuarioAdminResponse>().ReverseMap();
         }
     }
 }

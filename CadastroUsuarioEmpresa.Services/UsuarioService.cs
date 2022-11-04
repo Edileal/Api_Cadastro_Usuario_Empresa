@@ -35,6 +35,12 @@ namespace CadastroUsuarioEmpresa.Services
 
             return _mapper.Map<UsuarioResponse>(usuariosRetornoBaseDados);
         }
+        public async Task<IEnumerable<UsuarioAdminResponse>> GetAdmin()
+        {
+            var listaUsuariosRetornoBaseDados = await _usuarioRepository.Get();
+
+            return _mapper.Map<IEnumerable<UsuarioAdminResponse>>(listaUsuariosRetornoBaseDados);
+        }
 
         public async Task<UsuarioResponse> Post(UsuarioCadastraRequest usuarioRequest) 
         {
@@ -95,10 +101,10 @@ namespace CadastroUsuarioEmpresa.Services
                 throw new Exception("Cpf inserido inválido");
             }
 
-            if(await ValidarTelefone(usuarioRequest.Telefone) == false)
+            /*if (await ValidarTelefone(usuarioRequest.Telefone) == false)
             {
                 throw new Exception("Telefone inserido inválido");
-            }
+            }*/
 
             var requestUsuarioEntities = _mapper.Map<UsuarioEntities>(usuarioRequest);
 
@@ -138,10 +144,10 @@ namespace CadastroUsuarioEmpresa.Services
             }
             usuarioBancoDeDados.Cpf = usuarioRequest.Cpf;
 
-            if (await ValidarTelefone(usuarioRequest.Telefone) == false)
+            /*if (await ValidarTelefone(usuarioRequest.Telefone) == false)
             {
                 throw new Exception("Telefone inserido inválido");
-            }
+            }*/
             usuarioBancoDeDados.Telefone = usuarioRequest.Telefone;
 
             if (usuarioRequest.DataNascimento == null)
@@ -171,7 +177,7 @@ namespace CadastroUsuarioEmpresa.Services
         private async Task<bool> ValidarCep(string cep)
         {
             Regex regexCep = new Regex(@"^[0 - 9]{ 5}-[0 - 9]{ 3}$");
-            if (!regexCep.IsMatch(cep))
+            if (regexCep.IsMatch(cep))
             {
                 return false;
             }
@@ -195,7 +201,7 @@ namespace CadastroUsuarioEmpresa.Services
             }
             return true;
         }
-        private async Task<bool> ValidarTelefone(string telefone)
+        /*private async Task<bool> ValidarTelefone(string telefone)
         {
             Regex regexTelefone = new Regex(@"^\([1 - 9]{ 2}\) (?:[2 - 8] | 9[1 - 9])[0 - 9]{ 3}\-[0 - 9]{ 4}$");
             if (!regexTelefone.IsMatch(telefone))
@@ -203,7 +209,7 @@ namespace CadastroUsuarioEmpresa.Services
                 return false;
             }
             return true;
-        }
+        }*/
         private async Task<bool> ValidarCpf(string cpf)
         {
             int[] multiplicador1 = new int[9] { 10, 9, 8, 7, 6, 5, 4, 3, 2 };

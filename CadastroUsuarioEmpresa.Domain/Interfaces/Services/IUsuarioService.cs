@@ -10,5 +10,6 @@ namespace CadastroUsuarioEmpresa.Domain.Interfaces.Services
     public interface IUsuarioService : IBaseCRUD<UsuarioRequest, UsuarioResponse>
     {
         Task<UsuarioResponse> Post(UsuarioCadastraRequest request);
+        Task<IEnumerable<UsuarioAdminResponse>> GetAdmin();
     }
 }
