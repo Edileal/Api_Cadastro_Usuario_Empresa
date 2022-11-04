@@ -4,12 +4,12 @@
 
 namespace CadastroUsuarioEmpresa.Repository.Migrations
 {
-    public partial class MigrationEmailUnico : Migration
+    public partial class MigrationCPFUnique : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.AlterColumn<string>(
-                name: "Email",
+                name: "Cpf",
                 table: "Usuarios",
                 type: "nvarchar(450)",
                 nullable: false,
@@ -17,20 +17,20 @@ namespace CadastroUsuarioEmpresa.Repository.Migrations
                 oldType: "nvarchar(max)");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Usuarios_Email",
+                name: "IX_Usuarios_Cpf",
                 table: "Usuarios",
-                column: "Email",
+                column: "Cpf",
                 unique: true);
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropIndex(
-                name: "IX_Usuarios_Email",
+                name: "IX_Usuarios_Cpf",
                 table: "Usuarios");
 
             migrationBuilder.AlterColumn<string>(
-                name: "Email",
+                name: "Cpf",
                 table: "Usuarios",
                 type: "nvarchar(max)",
                 nullable: false,

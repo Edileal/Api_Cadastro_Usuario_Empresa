@@ -23,6 +23,7 @@ namespace CadastroUsuarioEmpresa.Repository.Mappings
                 );
 
             builder.HasIndex(prop => prop.Email).IsUnique();
+            builder.HasIndex(prop => prop.Cpf).IsUnique();
 
             builder.HasOne(prop => prop.Endereco).WithOne();
         }

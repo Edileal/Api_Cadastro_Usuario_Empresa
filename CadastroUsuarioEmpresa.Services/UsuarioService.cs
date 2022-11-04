@@ -12,13 +12,11 @@ namespace CadastroUsuarioEmpresa.Services
     public class UsuarioService : IUsuarioService
     {
         public readonly IUsuarioRepository _usuarioRepository;
-        public readonly IEnderecoRepository _enderecoRepository;
         public readonly IMapper _mapper;
 
-        public UsuarioService(IUsuarioRepository usuarioRepository, IEnderecoRepository enderecoRepository, IMapper mapper)
+        public UsuarioService(IUsuarioRepository usuarioRepository, IMapper mapper)
         {
             _usuarioRepository = usuarioRepository;
-            _enderecoRepository = enderecoRepository;
             _mapper = mapper;
         }
 
@@ -44,6 +42,7 @@ namespace CadastroUsuarioEmpresa.Services
 
         public async Task<UsuarioResponse> Post(UsuarioCadastraRequest usuarioRequest) 
         {
+
             Regex email = new Regex(@"[^@ \t\r\n]+@[^@ \t\r\n]+.[^@ \t\r\n]+");
             
             if (!email.IsMatch(usuarioRequest.Email))
@@ -85,26 +84,27 @@ namespace CadastroUsuarioEmpresa.Services
             {
                 throw new Exception("Número inválido");
             }
-
-            if(await ValidarSenha(usuarioRequest.Senha) == false)
+            if (usuarioRequest.Senha.Length < 8 & usuarioRequest.Senha == null)
+                throw new Exception("Senha inválida");
+            /*if(await ValidarSenha(usuarioRequest.Senha) == false)
             {
                 throw new Exception("Senha inválida");
-            }
+            }*/
 
-            if (string.IsNullOrWhiteSpace(usuarioRequest.DataNascimento))
+            if (usuarioRequest.DataNascimento == null)
             {
-                throw new Exception("Data inválida");
+                throw new Exception("Data de nascimento inserida inválida");
             }
 
-            if(await ValidarCpf(usuarioRequest.Cpf) == false)
+            if (await ValidarCpf(usuarioRequest.Cpf) == false)
             {
                 throw new Exception("Cpf inserido inválido");
             }
 
-            /*if (await ValidarTelefone(usuarioRequest.Telefone) == false)
+            if (await ValidarTelefone(usuarioRequest.Telefone) == false)
             {
                 throw new Exception("Telefone inserido inválido");
-            }*/
+            }
 
             var requestUsuarioEntities = _mapper.Map<UsuarioEntities>(usuarioRequest);
 
@@ -129,12 +129,22 @@ namespace CadastroUsuarioEmpresa.Services
 
             if (!email.IsMatch(usuarioRequest.Email))
             {
-                throw new ArgumentException("Email inválido");
+                throw new ArgumentException("E-mail inserido inválido");
             }
+
+            if (usuarioRequest.Email == usuarioBancoDeDados.Email)
+            {
+                throw new ArgumentException("Não é possível alterar pelo mesmo e-mail. Escolha um e-mail válido.");
+            }
+            usuarioBancoDeDados.Email = usuarioRequest.Email;
 
             if (await ValidarNome(usuarioRequest.Nome) == false)
             {
                 throw new Exception("Nome inserido inválido");
+            }
+            if (usuarioRequest.Nome == usuarioBancoDeDados.Nome)
+            {
+                throw new ArgumentException("Nome já utilizado. Escolha um nome diferente.");
             }
             usuarioBancoDeDados.Nome = usuarioRequest.Nome;
 
@@ -142,12 +152,16 @@ namespace CadastroUsuarioEmpresa.Services
             {
                 throw new Exception("Cpf inserido inválido");
             }
+            if (usuarioRequest.Cpf == usuarioBancoDeDados.Cpf)
+            {
+                throw new ArgumentException("Não é possível alterar pelo mesmo Cpf. Escolha um Cpf válido.");
+            }
             usuarioBancoDeDados.Cpf = usuarioRequest.Cpf;
 
-            /*if (await ValidarTelefone(usuarioRequest.Telefone) == false)
+            if (await ValidarTelefone(usuarioRequest.Telefone) == false)
             {
                 throw new Exception("Telefone inserido inválido");
-            }*/
+            }
             usuarioBancoDeDados.Telefone = usuarioRequest.Telefone;
 
             if (usuarioRequest.DataNascimento == null)
@@ -193,7 +207,7 @@ namespace CadastroUsuarioEmpresa.Services
             return true;
         }
 
-        private async Task<bool> ValidarSenha(string senha)
+        private async Task<bool> ValidarSenha(string senha) //testar senha no swagger. 
         {
             if(senha.Length < 8 && senha == null)
             {
@@ -201,7 +215,7 @@ namespace CadastroUsuarioEmpresa.Services
             }
             return true;
         }
-        /*private async Task<bool> ValidarTelefone(string telefone)
+        private async Task<bool> ValidarTelefone(string telefone)
         {
             Regex regexTelefone = new Regex(@"^\([1 - 9]{ 2}\) (?:[2 - 8] | 9[1 - 9])[0 - 9]{ 3}\-[0 - 9]{ 4}$");
             if (!regexTelefone.IsMatch(telefone))
@@ -209,7 +223,7 @@ namespace CadastroUsuarioEmpresa.Services
                 return false;
             }
             return true;
-        }*/
+        }
         private async Task<bool> ValidarCpf(string cpf)
         {
             int[] multiplicador1 = new int[9] { 10, 9, 8, 7, 6, 5, 4, 3, 2 };
@@ -224,6 +238,9 @@ namespace CadastroUsuarioEmpresa.Services
             {
                 return false;
             }
+            var repetidos = int.Parse(string.Concat(cpf.GroupBy(x => x).Select(x => x.Count())));
+            if (repetidos == 11)
+                return false;
 
             tempCpf = cpf.Substring(0, 9);
             soma = 0;

@@ -15,9 +15,9 @@ namespace CadastroUsuarioEmpresa.Controllers
         }
 
         [HttpPost]
-        public async Task<string> Login(string nome, string senha)
+        public async Task<string> Login(string email, string senha)
         {
-            return await _autenticacaoService.Login(nome, senha);
+            return await _autenticacaoService.Login(email, senha);
         }
     }
 }

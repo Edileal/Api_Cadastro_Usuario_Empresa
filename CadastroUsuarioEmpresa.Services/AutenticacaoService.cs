@@ -13,7 +13,7 @@ namespace CadastroUsuarioEmpresa.Services
             _usuarioRepository = usuarioRepository;
         }
 
-        public async Task<string> Login(string nome, string senha) //método de fazer login que solicita a senha e nome usados no cadastro.
+        public async Task<string> Login(string nome, string senha)
         {
             var result = await _usuarioRepository.GetByEmail(nome);
 

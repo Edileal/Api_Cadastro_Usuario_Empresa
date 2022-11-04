@@ -15,7 +15,7 @@ namespace CadastroUsuarioEmpresa.Domain.Contracts.Usuario
         public string Senha { get; set; }
         public string Cpf { get; set; }
         public string Role { get; set; }
-        public string DataNascimento { get; set; }
+        public DateTime DataNascimento { get; set; }
         public EnderecoRequest Endereco { get; set; }
     }
 }

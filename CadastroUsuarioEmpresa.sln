@@ -3,17 +3,19 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32929.385
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CadastroUsuarioEmpresa", "CadastroUsuarioEmpresa\CadastroUsuarioEmpresa.csproj", "{7F4779D3-2A1C-40B8-BCF6-7E6CBE3EBCFB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CadastroUsuarioEmpresa", "CadastroUsuarioEmpresa\CadastroUsuarioEmpresa.csproj", "{7F4779D3-2A1C-40B8-BCF6-7E6CBE3EBCFB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CadastroUsuarioEmpresa.Domain", "CadastroUsuarioEmpresa.Domain\CadastroUsuarioEmpresa.Domain.csproj", "{62F8E2BD-CEB3-4CC0-A798-ED5E0BCAEE8B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CadastroUsuarioEmpresa.Domain", "CadastroUsuarioEmpresa.Domain\CadastroUsuarioEmpresa.Domain.csproj", "{62F8E2BD-CEB3-4CC0-A798-ED5E0BCAEE8B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CadastroUsuarioEmpresa.CrossCutting", "CadastroUsuarioEmpresa.CrossCutting\CadastroUsuarioEmpresa.CrossCutting.csproj", "{646516B3-0F78-4351-9043-D108F9880C49}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CadastroUsuarioEmpresa.CrossCutting", "CadastroUsuarioEmpresa.CrossCutting\CadastroUsuarioEmpresa.CrossCutting.csproj", "{646516B3-0F78-4351-9043-D108F9880C49}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CadastroUsuarioEmpresa.IoC", "CadastroUsuarioEmpresa.IoC\CadastroUsuarioEmpresa.IoC.csproj", "{72671608-2836-4222-8FBC-E00D6F7F072E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CadastroUsuarioEmpresa.IoC", "CadastroUsuarioEmpresa.IoC\CadastroUsuarioEmpresa.IoC.csproj", "{72671608-2836-4222-8FBC-E00D6F7F072E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CadastroUsuarioEmpresa.Repository", "CadastroUsuarioEmpresa.Repository\CadastroUsuarioEmpresa.Repository.csproj", "{6F288560-C5BA-40C1-8C45-2E31DF2BA9B0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CadastroUsuarioEmpresa.Repository", "CadastroUsuarioEmpresa.Repository\CadastroUsuarioEmpresa.Repository.csproj", "{6F288560-C5BA-40C1-8C45-2E31DF2BA9B0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CadastroUsuarioEmpresa.Services", "CadastroUsuarioEmpresa.Services\CadastroUsuarioEmpresa.Services.csproj", "{E7BFBACA-3587-45EF-B21E-98D5DCE5026F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CadastroUsuarioEmpresa.Services", "CadastroUsuarioEmpresa.Services\CadastroUsuarioEmpresa.Services.csproj", "{E7BFBACA-3587-45EF-B21E-98D5DCE5026F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CadastroUsuarioEmpresa.Testes", "CadastroUsuarioEmpresa.Testes\CadastroUsuarioEmpresa.Testes.csproj", "{FA3EC195-587F-45B4-A793-395C2771F9FF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{E7BFBACA-3587-45EF-B21E-98D5DCE5026F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E7BFBACA-3587-45EF-B21E-98D5DCE5026F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E7BFBACA-3587-45EF-B21E-98D5DCE5026F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FA3EC195-587F-45B4-A793-395C2771F9FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA3EC195-587F-45B4-A793-395C2771F9FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA3EC195-587F-45B4-A793-395C2771F9FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA3EC195-587F-45B4-A793-395C2771F9FF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

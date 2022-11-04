@@ -1,10 +1,11 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
+﻿using System;
+using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
 namespace CadastroUsuarioEmpresa.Repository.Migrations
 {
-    public partial class InitialCreate : Migration
+    public partial class InitialMigration : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -55,11 +56,11 @@ namespace CadastroUsuarioEmpresa.Repository.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Nome = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Telefone = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Email = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Email = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     Senha = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Cpf = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Role = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    DataNascimento = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    DataNascimento = table.Column<DateTime>(type: "datetime2", nullable: false),
                     EnderecoId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
@@ -77,6 +78,12 @@ namespace CadastroUsuarioEmpresa.Repository.Migrations
                 name: "IX_Empresas_EnderecoId",
                 table: "Empresas",
                 column: "EnderecoId",
+                unique: true);
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Usuarios_Email",
+                table: "Usuarios",
+                column: "Email",
                 unique: true);
 
             migrationBuilder.CreateIndex(
