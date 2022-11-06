@@ -315,5 +315,25 @@ namespace CadastroUsuarioEmpresa.Testes.Services
             Assert.Equal(result.Email, resultUserRequest.Result.Email);
            
         }
+        [Fact(DisplayName = "Remove um usuário com sucesso")]
+        public async Task Delete()
+        {
+            int id = UsuarioEntitiesFaker.GetUsuarioById();
+
+            _mockUsuarioRepository.Setup(mock => mock.Delete(id)).Returns(() => Task.FromResult(string.Empty));
+
+
+            var service = new UsuarioService(_mockUsuarioRepository.Object, mapper);
+
+            try
+            {
+                await service.Delete(id);
+            }
+            catch (System.Exception)
+            {
+                Assert.True(false);
+            }
+
+        }
     }
 }
