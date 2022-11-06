@@ -17,10 +17,10 @@ namespace CadastroUsuarioEmpresa.Services
         public readonly IEmpresaRepository _empresaRepository;
         public readonly IEnderecoRepository _enderecoRepository;
         public readonly IMapper _mapper;
-        public EmpresaService(IEmpresaRepository empresaRepository, IEnderecoRepository enderecoRepository, IMapper mapper)
+        public EmpresaService(IEmpresaRepository empresaRepository, IMapper mapper)
         {
             _empresaRepository = empresaRepository;
-            _enderecoRepository = enderecoRepository;
+            
             _mapper = mapper;
         }
 

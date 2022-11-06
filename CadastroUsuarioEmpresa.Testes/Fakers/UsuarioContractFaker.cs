@@ -51,18 +51,7 @@ namespace CadastroUsuarioEmpresa.Testes.Fakers
                 Email = Fake.Person.Email,
                 DataNascimento = Fake.Person.DateOfBirth,
                 Role = Fake.PickRandom<RoleEnum>(),
-            };
-        }
-
-        public static UsuarioRequest UsuarioRequest() //Creio eu que não precisarei testar esse indíviduo. Porque Wilsonnn me alertou. Wilson God of War.
-        {
-            return new UsuarioRequest
-            {
-                Nome = Fake.Name.FirstName(),
-                Telefone = Fake.Random.Int(11, 11).ToString(),
-                Email = Fake.Person.Email,
-                DataNascimento = Fake.Person.DateOfBirth,
-                Role = Fake.PickRandom<RoleEnum>(),
+                Endereco = EnderecoContractFaker.GetEnderecoRequest()
             };
         }
 
