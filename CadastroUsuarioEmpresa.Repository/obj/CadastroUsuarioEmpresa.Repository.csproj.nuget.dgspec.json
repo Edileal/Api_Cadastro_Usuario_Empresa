@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\User\\Documents\\CadastroUsuarioEmpresa\\CadastroUsuarioEmpresa.Repository\\CadastroUsuarioEmpresa.Repository.csproj": {}
+    "C:\\Users\\User\\Documents\\CadastroUsuarioEmpresa\\CadastroUsuarioEmpresa.Repository\\CadastroUsuarioEmpresa.Repository.csproj": {}
   },
   "projects": {
-    "c:\\Users\\User\\Documents\\CadastroUsuarioEmpresa\\CadastroUsuarioEmpresa.Domain\\CadastroUsuarioEmpresa.Domain.csproj": {
+    "C:\\Users\\User\\Documents\\CadastroUsuarioEmpresa\\CadastroUsuarioEmpresa.Domain\\CadastroUsuarioEmpresa.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\User\\Documents\\CadastroUsuarioEmpresa\\CadastroUsuarioEmpresa.Domain\\CadastroUsuarioEmpresa.Domain.csproj",
+        "projectUniqueName": "C:\\Users\\User\\Documents\\CadastroUsuarioEmpresa\\CadastroUsuarioEmpresa.Domain\\CadastroUsuarioEmpresa.Domain.csproj",
         "projectName": "CadastroUsuarioEmpresa.Domain",
-        "projectPath": "c:\\Users\\User\\Documents\\CadastroUsuarioEmpresa\\CadastroUsuarioEmpresa.Domain\\CadastroUsuarioEmpresa.Domain.csproj",
+        "projectPath": "C:\\Users\\User\\Documents\\CadastroUsuarioEmpresa\\CadastroUsuarioEmpresa.Domain\\CadastroUsuarioEmpresa.Domain.csproj",
         "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\User\\Documents\\CadastroUsuarioEmpresa\\CadastroUsuarioEmpresa.Domain\\obj\\",
+        "outputPath": "C:\\Users\\User\\Documents\\CadastroUsuarioEmpresa\\CadastroUsuarioEmpresa.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -65,14 +65,14 @@
         }
       }
     },
-    "c:\\Users\\User\\Documents\\CadastroUsuarioEmpresa\\CadastroUsuarioEmpresa.Repository\\CadastroUsuarioEmpresa.Repository.csproj": {
+    "C:\\Users\\User\\Documents\\CadastroUsuarioEmpresa\\CadastroUsuarioEmpresa.Repository\\CadastroUsuarioEmpresa.Repository.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\User\\Documents\\CadastroUsuarioEmpresa\\CadastroUsuarioEmpresa.Repository\\CadastroUsuarioEmpresa.Repository.csproj",
+        "projectUniqueName": "C:\\Users\\User\\Documents\\CadastroUsuarioEmpresa\\CadastroUsuarioEmpresa.Repository\\CadastroUsuarioEmpresa.Repository.csproj",
         "projectName": "CadastroUsuarioEmpresa.Repository",
-        "projectPath": "c:\\Users\\User\\Documents\\CadastroUsuarioEmpresa\\CadastroUsuarioEmpresa.Repository\\CadastroUsuarioEmpresa.Repository.csproj",
+        "projectPath": "C:\\Users\\User\\Documents\\CadastroUsuarioEmpresa\\CadastroUsuarioEmpresa.Repository\\CadastroUsuarioEmpresa.Repository.csproj",
         "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\User\\Documents\\CadastroUsuarioEmpresa\\CadastroUsuarioEmpresa.Repository\\obj\\",
+        "outputPath": "C:\\Users\\User\\Documents\\CadastroUsuarioEmpresa\\CadastroUsuarioEmpresa.Repository\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -89,8 +89,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "c:\\Users\\User\\Documents\\CadastroUsuarioEmpresa\\CadastroUsuarioEmpresa.Domain\\CadastroUsuarioEmpresa.Domain.csproj": {
-                "projectPath": "c:\\Users\\User\\Documents\\CadastroUsuarioEmpresa\\CadastroUsuarioEmpresa.Domain\\CadastroUsuarioEmpresa.Domain.csproj"
+              "C:\\Users\\User\\Documents\\CadastroUsuarioEmpresa\\CadastroUsuarioEmpresa.Domain\\CadastroUsuarioEmpresa.Domain.csproj": {
+                "projectPath": "C:\\Users\\User\\Documents\\CadastroUsuarioEmpresa\\CadastroUsuarioEmpresa.Domain\\CadastroUsuarioEmpresa.Domain.csproj"
               }
             }
           }

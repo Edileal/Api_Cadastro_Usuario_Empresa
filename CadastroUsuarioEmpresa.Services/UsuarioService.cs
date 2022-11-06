@@ -243,7 +243,7 @@ namespace CadastroUsuarioEmpresa.Services
         }
         private async Task<bool> ValidarTelefone(string telefone)
         {
-            Regex regexTelefone = new Regex(@"^\([1-9]{2}\)\s?(?:[2-8]|9[1-9])[0-9]{3}\-?[0-9]{4}$");
+            Regex regexTelefone = new Regex(@"^\([1-9]{2}\)\s?(?:[0-8]|9[0-9])[0-9]{3}\-?[0-9]{4}$");
             if (!regexTelefone.IsMatch(telefone)) 
             {
                 return false;

@@ -19,11 +19,14 @@ namespace CadastroUsuarioEmpresa.Repository
 
         public async Task<IEnumerable<UsuarioEntities>> Get()
         {
-            return await _context.Usuarios.AsNoTracking().ToListAsync();
+            return await _context.Usuarios.Include(prop => prop.Endereco).AsNoTracking().ToListAsync();
         }
         public async Task<UsuarioEntities> GetById(int id)
         {
-            return await _context.Usuarios.Where(prop => prop.Id == id).AsNoTracking().FirstOrDefaultAsync();
+            return await _context.Usuarios.Where(prop => prop.Id == id)
+                .Include(prop => prop.Endereco)
+                .AsNoTracking()
+                .FirstOrDefaultAsync();
         }
 
         public async Task<UsuarioEntities> GetByEmail(string email)

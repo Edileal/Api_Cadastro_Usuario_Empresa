@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\User\\Documents\\CadastroUsuarioEmpresa\\CadastroUsuarioEmpresa.IoC\\CadastroUsuarioEmpresa.IoC.csproj": {}
+    "C:\\Users\\User\\Documents\\CadastroUsuarioEmpresa\\CadastroUsuarioEmpresa.IoC\\CadastroUsuarioEmpresa.IoC.csproj": {}
   },
   "projects": {
-    "c:\\Users\\User\\Documents\\CadastroUsuarioEmpresa\\CadastroUsuarioEmpresa.CrossCutting\\CadastroUsuarioEmpresa.CrossCutting.csproj": {
+    "C:\\Users\\User\\Documents\\CadastroUsuarioEmpresa\\CadastroUsuarioEmpresa.CrossCutting\\CadastroUsuarioEmpresa.CrossCutting.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\User\\Documents\\CadastroUsuarioEmpresa\\CadastroUsuarioEmpresa.CrossCutting\\CadastroUsuarioEmpresa.CrossCutting.csproj",
+        "projectUniqueName": "C:\\Users\\User\\Documents\\CadastroUsuarioEmpresa\\CadastroUsuarioEmpresa.CrossCutting\\CadastroUsuarioEmpresa.CrossCutting.csproj",
         "projectName": "CadastroUsuarioEmpresa.CrossCutting",
-        "projectPath": "c:\\Users\\User\\Documents\\CadastroUsuarioEmpresa\\CadastroUsuarioEmpresa.CrossCutting\\CadastroUsuarioEmpresa.CrossCutting.csproj",
+        "projectPath": "C:\\Users\\User\\Documents\\CadastroUsuarioEmpresa\\CadastroUsuarioEmpresa.CrossCutting\\CadastroUsuarioEmpresa.CrossCutting.csproj",
         "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\User\\Documents\\CadastroUsuarioEmpresa\\CadastroUsuarioEmpresa.CrossCutting\\obj\\",
+        "outputPath": "C:\\Users\\User\\Documents\\CadastroUsuarioEmpresa\\CadastroUsuarioEmpresa.CrossCutting\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -28,14 +28,14 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "c:\\Users\\User\\Documents\\CadastroUsuarioEmpresa\\CadastroUsuarioEmpresa.Domain\\CadastroUsuarioEmpresa.Domain.csproj": {
-                "projectPath": "c:\\Users\\User\\Documents\\CadastroUsuarioEmpresa\\CadastroUsuarioEmpresa.Domain\\CadastroUsuarioEmpresa.Domain.csproj"
+              "C:\\Users\\User\\Documents\\CadastroUsuarioEmpresa\\CadastroUsuarioEmpresa.Domain\\CadastroUsuarioEmpresa.Domain.csproj": {
+                "projectPath": "C:\\Users\\User\\Documents\\CadastroUsuarioEmpresa\\CadastroUsuarioEmpresa.Domain\\CadastroUsuarioEmpresa.Domain.csproj"
               },
-              "c:\\Users\\User\\Documents\\CadastroUsuarioEmpresa\\CadastroUsuarioEmpresa.Repository\\CadastroUsuarioEmpresa.Repository.csproj": {
-                "projectPath": "c:\\Users\\User\\Documents\\CadastroUsuarioEmpresa\\CadastroUsuarioEmpresa.Repository\\CadastroUsuarioEmpresa.Repository.csproj"
+              "C:\\Users\\User\\Documents\\CadastroUsuarioEmpresa\\CadastroUsuarioEmpresa.Repository\\CadastroUsuarioEmpresa.Repository.csproj": {
+                "projectPath": "C:\\Users\\User\\Documents\\CadastroUsuarioEmpresa\\CadastroUsuarioEmpresa.Repository\\CadastroUsuarioEmpresa.Repository.csproj"
               },
-              "c:\\Users\\User\\Documents\\CadastroUsuarioEmpresa\\CadastroUsuarioEmpresa.Services\\CadastroUsuarioEmpresa.Services.csproj": {
-                "projectPath": "c:\\Users\\User\\Documents\\CadastroUsuarioEmpresa\\CadastroUsuarioEmpresa.Services\\CadastroUsuarioEmpresa.Services.csproj"
+              "C:\\Users\\User\\Documents\\CadastroUsuarioEmpresa\\CadastroUsuarioEmpresa.Services\\CadastroUsuarioEmpresa.Services.csproj": {
+                "projectPath": "C:\\Users\\User\\Documents\\CadastroUsuarioEmpresa\\CadastroUsuarioEmpresa.Services\\CadastroUsuarioEmpresa.Services.csproj"
               }
             }
           }
@@ -91,14 +91,14 @@
         }
       }
     },
-    "c:\\Users\\User\\Documents\\CadastroUsuarioEmpresa\\CadastroUsuarioEmpresa.Domain\\CadastroUsuarioEmpresa.Domain.csproj": {
+    "C:\\Users\\User\\Documents\\CadastroUsuarioEmpresa\\CadastroUsuarioEmpresa.Domain\\CadastroUsuarioEmpresa.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\User\\Documents\\CadastroUsuarioEmpresa\\CadastroUsuarioEmpresa.Domain\\CadastroUsuarioEmpresa.Domain.csproj",
+        "projectUniqueName": "C:\\Users\\User\\Documents\\CadastroUsuarioEmpresa\\CadastroUsuarioEmpresa.Domain\\CadastroUsuarioEmpresa.Domain.csproj",
         "projectName": "CadastroUsuarioEmpresa.Domain",
-        "projectPath": "c:\\Users\\User\\Documents\\CadastroUsuarioEmpresa\\CadastroUsuarioEmpresa.Domain\\CadastroUsuarioEmpresa.Domain.csproj",
+        "projectPath": "C:\\Users\\User\\Documents\\CadastroUsuarioEmpresa\\CadastroUsuarioEmpresa.Domain\\CadastroUsuarioEmpresa.Domain.csproj",
         "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\User\\Documents\\CadastroUsuarioEmpresa\\CadastroUsuarioEmpresa.Domain\\obj\\",
+        "outputPath": "C:\\Users\\User\\Documents\\CadastroUsuarioEmpresa\\CadastroUsuarioEmpresa.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -152,14 +152,14 @@
         }
       }
     },
-    "c:\\Users\\User\\Documents\\CadastroUsuarioEmpresa\\CadastroUsuarioEmpresa.IoC\\CadastroUsuarioEmpresa.IoC.csproj": {
+    "C:\\Users\\User\\Documents\\CadastroUsuarioEmpresa\\CadastroUsuarioEmpresa.IoC\\CadastroUsuarioEmpresa.IoC.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\User\\Documents\\CadastroUsuarioEmpresa\\CadastroUsuarioEmpresa.IoC\\CadastroUsuarioEmpresa.IoC.csproj",
+        "projectUniqueName": "C:\\Users\\User\\Documents\\CadastroUsuarioEmpresa\\CadastroUsuarioEmpresa.IoC\\CadastroUsuarioEmpresa.IoC.csproj",
         "projectName": "CadastroUsuarioEmpresa.IoC",
-        "projectPath": "c:\\Users\\User\\Documents\\CadastroUsuarioEmpresa\\CadastroUsuarioEmpresa.IoC\\CadastroUsuarioEmpresa.IoC.csproj",
+        "projectPath": "C:\\Users\\User\\Documents\\CadastroUsuarioEmpresa\\CadastroUsuarioEmpresa.IoC\\CadastroUsuarioEmpresa.IoC.csproj",
         "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\User\\Documents\\CadastroUsuarioEmpresa\\CadastroUsuarioEmpresa.IoC\\obj\\",
+        "outputPath": "C:\\Users\\User\\Documents\\CadastroUsuarioEmpresa\\CadastroUsuarioEmpresa.IoC\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -176,8 +176,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "c:\\Users\\User\\Documents\\CadastroUsuarioEmpresa\\CadastroUsuarioEmpresa.CrossCutting\\CadastroUsuarioEmpresa.CrossCutting.csproj": {
-                "projectPath": "c:\\Users\\User\\Documents\\CadastroUsuarioEmpresa\\CadastroUsuarioEmpresa.CrossCutting\\CadastroUsuarioEmpresa.CrossCutting.csproj"
+              "C:\\Users\\User\\Documents\\CadastroUsuarioEmpresa\\CadastroUsuarioEmpresa.CrossCutting\\CadastroUsuarioEmpresa.CrossCutting.csproj": {
+                "projectPath": "C:\\Users\\User\\Documents\\CadastroUsuarioEmpresa\\CadastroUsuarioEmpresa.CrossCutting\\CadastroUsuarioEmpresa.CrossCutting.csproj"
               }
             }
           }
@@ -217,14 +217,14 @@
         }
       }
     },
-    "c:\\Users\\User\\Documents\\CadastroUsuarioEmpresa\\CadastroUsuarioEmpresa.Repository\\CadastroUsuarioEmpresa.Repository.csproj": {
+    "C:\\Users\\User\\Documents\\CadastroUsuarioEmpresa\\CadastroUsuarioEmpresa.Repository\\CadastroUsuarioEmpresa.Repository.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\User\\Documents\\CadastroUsuarioEmpresa\\CadastroUsuarioEmpresa.Repository\\CadastroUsuarioEmpresa.Repository.csproj",
+        "projectUniqueName": "C:\\Users\\User\\Documents\\CadastroUsuarioEmpresa\\CadastroUsuarioEmpresa.Repository\\CadastroUsuarioEmpresa.Repository.csproj",
         "projectName": "CadastroUsuarioEmpresa.Repository",
-        "projectPath": "c:\\Users\\User\\Documents\\CadastroUsuarioEmpresa\\CadastroUsuarioEmpresa.Repository\\CadastroUsuarioEmpresa.Repository.csproj",
+        "projectPath": "C:\\Users\\User\\Documents\\CadastroUsuarioEmpresa\\CadastroUsuarioEmpresa.Repository\\CadastroUsuarioEmpresa.Repository.csproj",
         "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\User\\Documents\\CadastroUsuarioEmpresa\\CadastroUsuarioEmpresa.Repository\\obj\\",
+        "outputPath": "C:\\Users\\User\\Documents\\CadastroUsuarioEmpresa\\CadastroUsuarioEmpresa.Repository\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -241,8 +241,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "c:\\Users\\User\\Documents\\CadastroUsuarioEmpresa\\CadastroUsuarioEmpresa.Domain\\CadastroUsuarioEmpresa.Domain.csproj": {
-                "projectPath": "c:\\Users\\User\\Documents\\CadastroUsuarioEmpresa\\CadastroUsuarioEmpresa.Domain\\CadastroUsuarioEmpresa.Domain.csproj"
+              "C:\\Users\\User\\Documents\\CadastroUsuarioEmpresa\\CadastroUsuarioEmpresa.Domain\\CadastroUsuarioEmpresa.Domain.csproj": {
+                "projectPath": "C:\\Users\\User\\Documents\\CadastroUsuarioEmpresa\\CadastroUsuarioEmpresa.Domain\\CadastroUsuarioEmpresa.Domain.csproj"
               }
             }
           }
@@ -302,14 +302,14 @@
         }
       }
     },
-    "c:\\Users\\User\\Documents\\CadastroUsuarioEmpresa\\CadastroUsuarioEmpresa.Services\\CadastroUsuarioEmpresa.Services.csproj": {
+    "C:\\Users\\User\\Documents\\CadastroUsuarioEmpresa\\CadastroUsuarioEmpresa.Services\\CadastroUsuarioEmpresa.Services.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\User\\Documents\\CadastroUsuarioEmpresa\\CadastroUsuarioEmpresa.Services\\CadastroUsuarioEmpresa.Services.csproj",
+        "projectUniqueName": "C:\\Users\\User\\Documents\\CadastroUsuarioEmpresa\\CadastroUsuarioEmpresa.Services\\CadastroUsuarioEmpresa.Services.csproj",
         "projectName": "CadastroUsuarioEmpresa.Services",
-        "projectPath": "c:\\Users\\User\\Documents\\CadastroUsuarioEmpresa\\CadastroUsuarioEmpresa.Services\\CadastroUsuarioEmpresa.Services.csproj",
+        "projectPath": "C:\\Users\\User\\Documents\\CadastroUsuarioEmpresa\\CadastroUsuarioEmpresa.Services\\CadastroUsuarioEmpresa.Services.csproj",
         "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\User\\Documents\\CadastroUsuarioEmpresa\\CadastroUsuarioEmpresa.Services\\obj\\",
+        "outputPath": "C:\\Users\\User\\Documents\\CadastroUsuarioEmpresa\\CadastroUsuarioEmpresa.Services\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -326,8 +326,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "c:\\Users\\User\\Documents\\CadastroUsuarioEmpresa\\CadastroUsuarioEmpresa.Domain\\CadastroUsuarioEmpresa.Domain.csproj": {
-                "projectPath": "c:\\Users\\User\\Documents\\CadastroUsuarioEmpresa\\CadastroUsuarioEmpresa.Domain\\CadastroUsuarioEmpresa.Domain.csproj"
+              "C:\\Users\\User\\Documents\\CadastroUsuarioEmpresa\\CadastroUsuarioEmpresa.Domain\\CadastroUsuarioEmpresa.Domain.csproj": {
+                "projectPath": "C:\\Users\\User\\Documents\\CadastroUsuarioEmpresa\\CadastroUsuarioEmpresa.Domain\\CadastroUsuarioEmpresa.Domain.csproj"
               }
             }
           }

@@ -1,4 +1,5 @@
 ﻿using Bogus;
+using Bogus.Extensions.Brazil;
 using CadastroUsuarioEmpresa.Domain.Contracts.Usuario;
 using CadastroUsuarioEmpresa.Domain.Enum;
 using System;
@@ -32,7 +33,7 @@ namespace CadastroUsuarioEmpresa.Testes.Fakers
                     Email = Fake.Person.Email,
                     DataNascimento = Fake.Person.DateOfBirth,
                     Role = Fake.PickRandom<RoleEnum>(),
-                    //Endereco = EnderecoFaker.GetEndereco()
+                    Endereco = EnderecoContractFaker.GetEnderecoRequest()
 
                 });
             }
@@ -53,7 +54,7 @@ namespace CadastroUsuarioEmpresa.Testes.Fakers
             };
         }
 
-        public static UsuarioRequest UsuarioRequest()
+        public static UsuarioRequest UsuarioRequest() //Creio eu que não precisarei testar esse indíviduo. Porque Wilsonnn me alertou. Wilson God of War.
         {
             return new UsuarioRequest
             {
@@ -70,11 +71,13 @@ namespace CadastroUsuarioEmpresa.Testes.Fakers
             return new UsuarioCadastraRequest
             {
                 Nome = Fake.Name.FirstName(),
-                Senha = Fake.Name.FullName(),
-                Telefone = Fake.Random.Int(11, 11).ToString(),
+                Senha = Fake.Internet.Password(8, true, "", "E-1y74"),
+                Telefone = Fake.Phone.PhoneNumber("(71) 9####-####"),
                 Email = Fake.Person.Email,
                 DataNascimento = Fake.Person.DateOfBirth,
                 Role = Fake.PickRandom<RoleEnum>(),
+                Cpf = Fake.Person.Cpf(),
+                Endereco = EnderecoContractFaker.GetEnderecoRequest()
             };
         }
 
@@ -83,7 +86,11 @@ namespace CadastroUsuarioEmpresa.Testes.Fakers
             return new UsuarioResponse()
             {
                 Id = Fake.IndexFaker,
-                Nome = nome
+                Nome = Fake.Name.FirstName(),
+                Telefone = Fake.Random.Int(11, 11).ToString(),
+                Email = Fake.Person.Email,
+                DataNascimento = Fake.Person.DateOfBirth,
+                Role = Fake.PickRandom<RoleEnum>(),
             };
         }
     }

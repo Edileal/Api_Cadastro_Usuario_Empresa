@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "WdQLgezRp+VPyBWZG/BaV9RguYPNwrVrMudw2oUjvoC61zmv+C+QtirHkFfW/DFPe/XhfwBFnlTpli8tz3eWjQ==",
+  "dgSpecHash": "UDeXTNxeAbJPY9w6X5WuHMSwgnhDyum8rOfLTkAbN8qwlRr/ag62GucrD5suOdlyYkKbcolVLOLPWitjPAPBRA==",
   "success": true,
-  "projectFilePath": "c:\\Users\\User\\Documents\\CadastroUsuarioEmpresa\\CadastroUsuarioEmpresa.Domain\\CadastroUsuarioEmpresa.Domain.csproj",
+  "projectFilePath": "C:\\Users\\User\\Documents\\CadastroUsuarioEmpresa\\CadastroUsuarioEmpresa.Domain\\CadastroUsuarioEmpresa.Domain.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\User\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
     "C:\\Users\\User\\.nuget\\packages\\microsoft.identitymodel.abstractions\\6.25.0\\microsoft.identitymodel.abstractions.6.25.0.nupkg.sha512",

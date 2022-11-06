@@ -9,7 +9,7 @@ namespace CadastroUsuarioEmpresa.Domain.Contracts.Empresa
 {
     public class EmpresaRequest
     {
-        public string Nome { get; set; }
+        public string? Nome { get; set; }
         public string NomeFantasia { get; set; }
         public EnderecoRequest Endereco { get; set; }
     }

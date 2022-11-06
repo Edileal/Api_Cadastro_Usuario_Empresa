@@ -1,14 +1,11 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using AutoMapper;
 using CadastroUsuarioEmpresa.Domain.Interfaces.Repository;
 using CadastroUsuarioEmpresa.Services;
 using CadastroUsuarioEmpresa.Testes.CrossCutting;
 using CadastroUsuarioEmpresa.Testes.Fakers;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+/*using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
+using Xunit;
 
 namespace CadastroUsuarioEmpresa.Testes.Services
 {
@@ -29,4 +26,4 @@ namespace CadastroUsuarioEmpresa.Testes.Services
             Assert.IsTrue(true);
         }
     }
-}
+}*/
