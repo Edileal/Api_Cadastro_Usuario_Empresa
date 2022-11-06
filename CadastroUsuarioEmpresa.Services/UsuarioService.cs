@@ -47,7 +47,7 @@ namespace CadastroUsuarioEmpresa.Services
             
             if (!email.IsMatch(usuarioRequest.Email))
             {
-                throw new ArgumentException("Email inválido");
+                throw new ArgumentException("E-mail inserido inválido");
             }
 
             if(await ValidarNome(usuarioRequest.Nome) == false)

@@ -45,8 +45,8 @@ namespace CadastroUsuarioEmpresa.Testes.Services
         {
 
             var userRequest = UsuarioContractFaker.UsuarioCadastraRequest();
-            var userRequestEntities = await UsuarioEntitiesFaker.GetUsuarioEntities();
-            var resultUserRequest = UsuarioEntitiesFaker.UsuarioEntitiesBaseRequestAsync(userRequestEntities.Nome);
+            var userRequestEntities = await UsuarioEntitiesFaker.UsuarioEntitiesBase(userRequest);
+            var resultUserRequest = UsuarioEntitiesFaker.UsuarioEntitiesBaseAsync(userRequestEntities);
 
             _mockUsuarioRepository.Setup(mock => mock.Post(It.IsAny<UsuarioEntities>())).Returns(resultUserRequest);
 
@@ -56,21 +56,71 @@ namespace CadastroUsuarioEmpresa.Testes.Services
 
             Assert.Equal(result.Nome, resultUserRequest.Result.Nome);
         }
-        [Fact(DisplayName = "Cadastrar novo usuário com nome null")]
-        public async Task PostNomeNull()
+        [Fact(DisplayName = "Cadastrar novo usuário com nome inválido")]
+        public async Task PostNomeInvalido()
         {
 
             var userRequest = UsuarioContractFaker.UsuarioCadastraRequest();
-            var userRequestEntities = await UsuarioEntitiesFaker.GetUsuarioEntities();
-            var resultUserRequest = UsuarioEntitiesFaker.UsuarioEntitiesBaseRequestAsync(userRequestEntities.Nome);
+            userRequest.Nome = null;
+            var userRequestEntities = await UsuarioEntitiesFaker.UsuarioEntitiesBase(userRequest);
+            var resultUserRequest = UsuarioEntitiesFaker.UsuarioEntitiesBaseAsync(userRequestEntities);
 
             _mockUsuarioRepository.Setup(mock => mock.Post(It.IsAny<UsuarioEntities>())).Returns(resultUserRequest);
 
             var service = new UsuarioService(_mockUsuarioRepository.Object, mapper);
 
-            var result = await service.Post(userRequest);
+            try
+            {
+                await service.Post(userRequest);
+            }
+            catch (Exception e)
+            {
+                Assert.Equal("Nome inválido", e.Message);
+            }
+        }
+        [Fact(DisplayName = "Cadastrar novo usuário com senha inválida")]
+        public async Task PostSenhaInvalida()
+        {
 
-            Assert.Equal(result.Nome, resultUserRequest.Result.Nome);
+            var userRequest = UsuarioContractFaker.UsuarioCadastraRequest();
+            userRequest.Senha = "1";
+            var userRequestEntities = await UsuarioEntitiesFaker.UsuarioEntitiesBase(userRequest);
+            var resultUserRequest = UsuarioEntitiesFaker.UsuarioEntitiesBaseAsync(userRequestEntities);
+
+            _mockUsuarioRepository.Setup(mock => mock.Post(It.IsAny<UsuarioEntities>())).Returns(resultUserRequest);
+
+            var service = new UsuarioService(_mockUsuarioRepository.Object, mapper);
+
+            try
+            {
+                await service.Post(userRequest);
+            }
+            catch (Exception e)
+            {
+                Assert.Equal("Senha inserida inválida", e.Message);
+            }
+        }
+        [Fact(DisplayName = "Cadastrar novo usuário com e-mail inválido")]
+        public async Task PostEmailInvalido()
+        {
+
+            var userRequest = UsuarioContractFaker.UsuarioCadastraRequest();
+            userRequest.Email = "e";
+            var userRequestEntities = await UsuarioEntitiesFaker.UsuarioEntitiesBase(userRequest);
+            var resultUserRequest = UsuarioEntitiesFaker.UsuarioEntitiesBaseAsync(userRequestEntities);
+
+            _mockUsuarioRepository.Setup(mock => mock.Post(It.IsAny<UsuarioEntities>())).Returns(resultUserRequest);
+
+            var service = new UsuarioService(_mockUsuarioRepository.Object, mapper);
+
+            try
+            {
+                await service.Post(userRequest);
+            }
+            catch (Exception e)
+            {
+                Assert.Equal("E-mail inserido inválido", e.Message);
+            }
         }
     }
 }
