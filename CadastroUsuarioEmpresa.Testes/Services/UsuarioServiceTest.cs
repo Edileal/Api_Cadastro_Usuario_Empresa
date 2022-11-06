@@ -276,7 +276,7 @@ namespace CadastroUsuarioEmpresa.Testes.Services
                 Assert.Equal("Número inválido", e.Message);
             }
         }
-        [Fact(DisplayName = "Cadastrar novo usuário com número inválido")]
+        [Fact(DisplayName = "Cadastrar novo usuário com Estado inválido")]
         public async Task PostEnderecoEstadoInvalido()
         {
 
