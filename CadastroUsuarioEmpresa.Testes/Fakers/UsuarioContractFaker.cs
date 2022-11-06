@@ -93,47 +93,5 @@ namespace CadastroUsuarioEmpresa.Testes.Fakers
                 Role = Fake.PickRandom<RoleEnum>(),
             };
         }
-        public static UsuarioCadastraRequest UsuarioCadastraRequestNomeInvalido()
-        {
-            return new UsuarioCadastraRequest
-            {
-
-                Senha = Fake.Internet.Password(8, true, "", "E-1y74"),
-                Telefone = Fake.Phone.PhoneNumber("(71) 9####-####"),
-                Email = Fake.Person.Email,
-                DataNascimento = Fake.Person.DateOfBirth,
-                Role = Fake.PickRandom<RoleEnum>(),
-                Cpf = Fake.Person.Cpf(),
-                Endereco = EnderecoContractFaker.GetEnderecoRequest()
-            };
-        }
-        public static UsuarioCadastraRequest UsuarioCadastraRequestSenhaInvalida() //senha inválida
-        {
-            return new UsuarioCadastraRequest
-            {
-                Nome = Fake.Name.FirstName(),
-                
-                Telefone = Fake.Phone.PhoneNumber("(71) 9####-####"),
-                Email = Fake.Person.Email,
-                DataNascimento = Fake.Person.DateOfBirth,
-                Role = Fake.PickRandom<RoleEnum>(),
-                Cpf = Fake.Person.Cpf(),
-                Endereco = EnderecoContractFaker.GetEnderecoRequest()
-            };
-        }
-        public static UsuarioCadastraRequest UsuarioCadastraRequestEmailInvalido()
-        {
-            return new UsuarioCadastraRequest
-            {
-                Nome = Fake.Name.FirstName(),
-                Senha = Fake.Internet.Password(8, true, "", "E-1y74"),
-                Telefone = Fake.Phone.PhoneNumber("(71) 9####-####"),
-                
-                DataNascimento = Fake.Person.DateOfBirth,
-                Role = Fake.PickRandom<RoleEnum>(),
-                Cpf = Fake.Person.Cpf(),
-                Endereco = EnderecoContractFaker.GetEnderecoRequest()
-            };
-        }
     }
 }

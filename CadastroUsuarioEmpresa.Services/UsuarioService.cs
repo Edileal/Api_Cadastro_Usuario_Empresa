@@ -1,5 +1,4 @@
 ﻿using AutoMapper;
-using CadastroUsuarioEmpresa.Domain.Contracts.Endereco;
 using CadastroUsuarioEmpresa.Domain.Contracts.Usuario;
 using CadastroUsuarioEmpresa.Domain.Entities;
 using CadastroUsuarioEmpresa.Domain.Interfaces.Repository;
@@ -47,62 +46,62 @@ namespace CadastroUsuarioEmpresa.Services
             
             if (!email.IsMatch(usuarioRequest.Email))
             {
-                throw new ArgumentException("E-mail inserido inválido");
+                throw new ArgumentException("E-mail inserido inválido"); //teste ok
             }
 
             if(await ValidarNome(usuarioRequest.Nome) == false)
             {
-                throw new Exception("Nome inválido");
+                throw new Exception("Nome inválido"); //teste ok
             }
 
             if (string.IsNullOrWhiteSpace(usuarioRequest.Endereco.Rua))
             {
-                throw new Exception("Rua inválida");
+                throw new Exception("Rua inválida"); //teste ok
             }
 
             if (string.IsNullOrWhiteSpace(usuarioRequest.Endereco.Bairro))
             {
-                throw new Exception("Bairro inválido");
+                throw new Exception("Bairro inválido"); //teste ok
             }
 
             if (await ValidarCep(usuarioRequest.Endereco.Cep) == false)
             {
-                throw new Exception("Cep inválido");
+                throw new Exception("Cep inválido"); //teste ok
             }
 
             if (string.IsNullOrWhiteSpace(usuarioRequest.Endereco.Cidade))
             {
-                throw new Exception("Cidade inválida");
+                throw new Exception("Cidade inválida"); //teste ok
             }
 
             if (string.IsNullOrWhiteSpace(usuarioRequest.Endereco.Estado))
             {
-                throw new Exception("Bairro inválido");
+                throw new Exception("Estado inválido"); //teste ok
             }
 
             if (string.IsNullOrWhiteSpace(usuarioRequest.Endereco.Numero))
             {
-                throw new Exception("Número inválido");
+                throw new Exception("Número inválido"); //teste ok
             }
 
             if(await ValidarSenha(usuarioRequest.Senha) == false)
             {
-                throw new Exception("Senha inserida inválida");
+                throw new Exception("Senha inserida inválida"); //teste ok
             }
 
-            if (usuarioRequest.DataNascimento == null)
+            if (usuarioRequest.DataNascimento == null) //ou datetime.now?
             {
-                throw new Exception("Data de nascimento inserida inválida");
+                throw new Exception("Data de nascimento inserida inválida"); //teste ok
             }
 
             if (await ValidarCpf(usuarioRequest.Cpf) == false)
             {
-                throw new Exception("Cpf inserido inválido");
+                throw new Exception("Cpf inserido inválido"); //teste ok
             }
 
             if (await ValidarTelefone(usuarioRequest.Telefone) == false)
             {
-                throw new Exception("Telefone inserido inválido");
+                throw new Exception("Telefone inserido inválido"); //teste ok
             }
 
             var requestUsuarioEntities = _mapper.Map<UsuarioEntities>(usuarioRequest);
