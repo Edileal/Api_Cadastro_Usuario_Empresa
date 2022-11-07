@@ -101,21 +101,21 @@ namespace CadastroUsuarioEmpresa.Testes.Fakers
                 Telefone = fake.Phone.PhoneNumber("(71) 98###-####")
             };
         }
-        public static async Task<UsuarioEntities> UsuarioEntitiesBaseAsync(UsuarioEntities request)
-        {
-            return new UsuarioEntities()
-            {
-                Id = fake.IndexFaker,
-                Nome = fake.Person.FullName,
-                Cpf = fake.Person.Cpf(),
-                DataNascimento = fake.Person.DateOfBirth,
-                Email = fake.Person.Email,
-                Role = fake.PickRandom<RoleEnum>(),
-                Endereco = EnderecoFaker.GetEndereco(),
-                Senha = fake.Internet.Password(8, true, "", "E-1y74"),
-                Telefone = fake.Phone.PhoneNumber("(71) 98###-####")
-            };
-        }
+        //public static async Task<UsuarioEntities> UsuarioEntitiesBaseAsync(UsuarioEntities request)
+        //{
+        //    return new UsuarioEntities()
+        //    {
+        //        Id = fake.IndexFaker,
+        //        Nome = fake.Person.FullName,
+        //        Cpf = fake.Person.Cpf(),
+        //        DataNascimento = fake.Person.DateOfBirth,
+        //        Email = fake.Person.Email,
+        //        Role = fake.PickRandom<RoleEnum>(),
+        //        Endereco = EnderecoFaker.GetEndereco(),
+        //        Senha = fake.Internet.Password(8, true, "", "E-1y74"),
+        //        Telefone = fake.Phone.PhoneNumber("(71) 98###-####")
+        //    };
+        //}
 
     }
 }

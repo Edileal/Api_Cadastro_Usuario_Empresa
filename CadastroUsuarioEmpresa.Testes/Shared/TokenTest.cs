@@ -19,8 +19,8 @@ namespace CadastroUsuarioEmpresa.Testes.Shared
         public void TesteSeCriptografiaOk()
         {
             var token = Token.GenerateToken(UsuarioEntitiesFaker.GetUsuario(RoleEnum.Administrador));
-            var jwt = handler.ReadJwtToken(token);
-            var role = jwt.Claims.FirstOrDefault(prop => prop.Type == "role");
+            var convert = handler.ReadJwtToken(token);
+            var role = convert.Claims.FirstOrDefault(prop => prop.Type == "role");
 
             Assert.Equal("Administrador", role.Value);
         }
