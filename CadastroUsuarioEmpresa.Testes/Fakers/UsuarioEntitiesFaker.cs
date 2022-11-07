@@ -32,6 +32,22 @@ namespace CadastroUsuarioEmpresa.Testes.Fakers
 
             };
         }
+        public static UsuarioEntities GetUsuario(RoleEnum adm)
+        {
+            return new UsuarioEntities()
+            {
+                Id = fake.IndexFaker,
+                Nome = fake.Person.FullName,
+                DataNascimento = fake.Person.DateOfBirth,
+                Cpf = fake.Person.Cpf(),
+                Endereco = EnderecoFaker.GetEndereco(),
+                Email = fake.Person.Email,
+                Senha = fake.Internet.Password(8, true, "", "E-1y74"),
+                Role = adm,
+                Telefone = fake.Phone.PhoneNumber("(75) 98###-####")
+
+            };
+        }
 
         public static async Task<UsuarioEntities> UsuarioEntitiesAsync(int id)
         {

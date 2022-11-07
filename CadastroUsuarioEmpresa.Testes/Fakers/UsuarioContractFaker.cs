@@ -54,7 +54,7 @@ namespace CadastroUsuarioEmpresa.Testes.Fakers
             return new UsuarioRequest
             {
                 Nome = Fake.Name.FirstName(),
-                Telefone = Fake.Phone.PhoneNumber("(71) 9####-####"),
+                Telefone = Fake.Phone.PhoneNumber("(71) 98###-####"),
                 Email = Fake.Person.Email,
                 DataNascimento = Fake.Person.DateOfBirth,
                 Role = Fake.PickRandom<RoleEnum>(),
@@ -68,7 +68,7 @@ namespace CadastroUsuarioEmpresa.Testes.Fakers
             {
                 Nome = Fake.Name.FirstName(),
                 Senha = Fake.Internet.Password(8, true, "", "E-1y74"),
-                Telefone = Fake.Phone.PhoneNumber("(71) 9####-####"),
+                Telefone = Fake.Phone.PhoneNumber("(71) 98###-####"),
                 Email = Fake.Person.Email,
                 DataNascimento = Fake.Person.DateOfBirth,
                 Role = Fake.PickRandom<RoleEnum>(),

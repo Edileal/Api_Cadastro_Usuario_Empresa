@@ -45,16 +45,16 @@ namespace CadastroUsuarioEmpresa.Testes.Services
         {
 
             var userRequest = UsuarioContractFaker.UsuarioCadastraRequest();
-            var userRequestEntities = await UsuarioEntitiesFaker.UsuarioEntitiesBase(userRequest);
-            var resultUserRequest = UsuarioEntitiesFaker.UsuarioEntitiesBaseAsync(userRequestEntities);
+            var userRequestEntities = UsuarioEntitiesFaker.UsuarioEntitiesBase(userRequest);
+            //var resultUserRequest = UsuarioEntitiesFaker.UsuarioEntitiesBaseAsync(userRequestEntities);
 
-            _mockUsuarioRepository.Setup(mock => mock.Post(It.IsAny<UsuarioEntities>())).Returns(resultUserRequest);
+            _mockUsuarioRepository.Setup(mock => mock.Post(It.IsAny<UsuarioEntities>())).Returns(userRequestEntities);
 
             var service = new UsuarioService(_mockUsuarioRepository.Object, mapper);
 
             var result = await service.Post(userRequest);
 
-            Assert.Equal(result.Nome, resultUserRequest.Result.Nome);
+            Assert.Equal(result.Nome, userRequestEntities.Result.Nome);
         }
         [Fact(DisplayName = "Cadastrar novo usuário com nome inválido")]
         public async Task PostNomeInvalido()
@@ -84,10 +84,10 @@ namespace CadastroUsuarioEmpresa.Testes.Services
 
             var userRequest = UsuarioContractFaker.UsuarioCadastraRequest();
             userRequest.Senha = "1";
-            var userRequestEntities = await UsuarioEntitiesFaker.UsuarioEntitiesBase(userRequest);
-            var resultUserRequest = UsuarioEntitiesFaker.UsuarioEntitiesBaseAsync(userRequestEntities);
+            var userRequestEntities = UsuarioEntitiesFaker.UsuarioEntitiesBase(userRequest);
+            //var resultUserRequest = UsuarioEntitiesFaker.UsuarioEntitiesBaseAsync(userRequestEntities);
 
-            _mockUsuarioRepository.Setup(mock => mock.Post(It.IsAny<UsuarioEntities>())).Returns(resultUserRequest);
+            _mockUsuarioRepository.Setup(mock => mock.Post(It.IsAny<UsuarioEntities>())).Returns(userRequestEntities);
 
             var service = new UsuarioService(_mockUsuarioRepository.Object, mapper);
 
@@ -97,7 +97,12 @@ namespace CadastroUsuarioEmpresa.Testes.Services
             }
             catch (Exception e)
             {
-                Assert.Equal("Senha inserida inválida", e.Message);
+                Assert.Equal("Senha não pode ser nula." +
+                              "Precisa conter ao menos um dígito." +
+                              "Deve conter ao menos uma letra minúscula." +
+                              "Deve conter ao menos uma letra maiúscula." +
+                              "Deve conter ao menos um caractere especial." +
+                              "Deve ter mais de 8 caracteres.", e.Message);
             }
         }
         [Fact(DisplayName = "Cadastrar novo usuário com e-mail inválido")]

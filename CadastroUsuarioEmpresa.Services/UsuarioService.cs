@@ -86,10 +86,15 @@ namespace CadastroUsuarioEmpresa.Services
 
             if(await ValidarSenha(usuarioRequest.Senha) == false)
             {
-                throw new Exception("Senha inserida inválida"); //teste ok
+                throw new Exception("Senha não pode ser nula." +
+                                     "Precisa conter ao menos um dígito." +
+                                     "Deve conter ao menos uma letra minúscula." +
+                                     "Deve conter ao menos uma letra maiúscula." +
+                                     "Deve conter ao menos um caractere especial." +
+                                     "Deve ter mais de 8 caracteres."); //teste ok
             }
 
-            if (usuarioRequest.DataNascimento == null) //ou datetime.now?
+            if (usuarioRequest.DataNascimento == null || usuarioRequest.DataNascimento >= DateTime.Now)
             {
                 throw new Exception("Data de nascimento inserida inválida"); //teste ok
             }
@@ -162,7 +167,7 @@ namespace CadastroUsuarioEmpresa.Services
             }
             usuarioBancoDeDados.Telefone = usuarioRequest.Telefone;
 
-            if (usuarioRequest.DataNascimento == null)
+            if (usuarioRequest.DataNascimento == null || usuarioRequest.DataNascimento >= DateTime.Now)
             {
                 throw new Exception("Data de nascimento inserida inválida");
             }

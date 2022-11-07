@@ -48,17 +48,54 @@ namespace CadastroUsuarioEmpresa.Testes.Services
         public async Task Post()
         {
 
-            var userRequest = EmpresaContractFaker.EmpresaRequest();
-            var userRequestEntities = await EmpresaEntitiesFaker.EmpresaEntitiesBase(userRequest);
-            var resultUserRequest = EmpresaEntitiesFaker.EmpresaEntitiesBase(userRequestEntities);
+            var empresaRequest = EmpresaContractFaker.EmpresaRequest();
+            var empresaRequestEntities = EmpresaEntitiesFaker.EmpresaEntitiesBase(empresaRequest);
+            //var resultEmpresaRequest = EmpresaEntitiesFaker.EmpresaEntitiesBase(empresaRequestEntities);
 
-            _mockEmpresaRepository.Setup(mock => mock.Post(It.IsAny<EmpresaEntities>())).Returns(resultUserRequest);
+            _mockEmpresaRepository.Setup(mock => mock.Post(It.IsAny<EmpresaEntities>())).Returns(empresaRequestEntities);
 
             var service = new EmpresaService(_mockEmpresaRepository.Object, mapper);
 
-            var result = await service.Post(userRequest);
+            var result = await service.Post(empresaRequest);
 
-            Assert.Equal(result.Nome, resultUserRequest.Result.Nome);
+            Assert.Equal(result.Nome, empresaRequestEntities.Result.Nome);
+        }
+        [Fact(DisplayName = "Edita um empresa com sucesso")]
+        public async Task Put()
+        {
+
+            var empresaRequest = EmpresaContractFaker.EmpresaRequest();
+            var empresaRequestEntities = EmpresaEntitiesFaker.EmpresaEntitiesBase(empresaRequest);
+            //var resultEmpresaRequest = EmpresaEntitiesFaker.EmpresaEntitiesBase(empresaRequestEntities);
+
+            _mockEmpresaRepository.Setup(mock => mock.GetById(It.IsAny<int>())).Returns(empresaRequestEntities);
+            _mockEmpresaRepository.Setup(mock => mock.Put(It.IsAny<EmpresaEntities>(), It.IsAny<int?>())).Returns(empresaRequestEntities);
+
+            var service = new EmpresaService(_mockEmpresaRepository.Object, mapper);
+            var result = await service.Put(empresaRequest, empresaRequestEntities.Result.Id);
+
+            Assert.Equal(result.NomeFantasia, empresaRequestEntities.Result.NomeFantasia);
+
+        }
+        [Fact(DisplayName = "Remove uma empresa com sucesso")]
+        public async Task Delete()
+        {
+            int id = EmpresaEntitiesFaker.GetEmpresaById();
+
+            _mockEmpresaRepository.Setup(mock => mock.Delete(id)).Returns(() => Task.FromResult(string.Empty));
+
+
+            var service = new EmpresaService(_mockEmpresaRepository.Object, mapper);
+
+            try
+            {
+                await service.Delete(id);
+            }
+            catch (System.Exception)
+            {
+                Assert.True(false);
+            }
+
         }
     }
 }
