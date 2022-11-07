@@ -14,7 +14,11 @@ namespace CadastroUsuarioEmpresa.Testes.Fakers
     {
         private static readonly Faker Fake = new Faker();
 
-       public static EmpresaRequest EmpresaRequest()
+        public static int GetId()
+        {
+            return Fake.IndexFaker;
+        }
+        public static EmpresaRequest EmpresaRequest()
         {
             return new EmpresaRequest()
             {
@@ -40,6 +44,23 @@ namespace CadastroUsuarioEmpresa.Testes.Fakers
             }
 
             return minhaLista;
+        }
+        public static async Task<EmpresaResponse> EmpresaResponsePorIdAsync(int id)
+        {
+            return new EmpresaResponse
+            {
+                Id = id,
+                NomeFantasia = Fake.Company.CompanyName(),
+                Endereco = EnderecoContractFaker.GetEnderecoRequest()
+            };
+        }
+        public static async Task<EmpresaResponse> EmpresaResponseAsync(string nomeFantasia)
+        {
+            return new EmpresaResponse
+            {
+                NomeFantasia = nomeFantasia,
+                Endereco = EnderecoContractFaker.GetEnderecoRequest()
+            };
         }
     }
 }

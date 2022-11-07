@@ -28,7 +28,7 @@ namespace CadastroUsuarioEmpresa.Testes.Fakers
                 Email = fake.Person.Email,
                 Senha = Cryptography.Encrypt(senha),
                 Role = fake.PickRandom<RoleEnum>(),
-                Telefone = fake.Phone.PhoneNumber("(75) 9####-####")
+                Telefone = fake.Phone.PhoneNumber("(75) 98###-####")
 
             };
         }
@@ -45,7 +45,7 @@ namespace CadastroUsuarioEmpresa.Testes.Fakers
                 Role = fake.PickRandom<RoleEnum>(),
                 Endereco = EnderecoFaker.GetEndereco(),
                 Senha = fake.Internet.Password(8, true, "", "E-1y74"),
-                Telefone = fake.Phone.PhoneNumber("(71) 9####-####")
+                Telefone = fake.Phone.PhoneNumber("(71) 98###-####")
             };
         }
         public static async Task<IEnumerable<UsuarioEntities>> UsuarioEntitiesAsync()
@@ -64,7 +64,7 @@ namespace CadastroUsuarioEmpresa.Testes.Fakers
                     Role = fake.PickRandom<RoleEnum>(),
                     Endereco = EnderecoFaker.GetEndereco(),
                     Senha = fake.Internet.Password(8, true, "", "E-1y74"),
-                    Telefone = fake.Phone.PhoneNumber("(71) 9####-####")
+                    Telefone = fake.Phone.PhoneNumber("(71) 98###-####")
                 });
             }
 
@@ -82,7 +82,7 @@ namespace CadastroUsuarioEmpresa.Testes.Fakers
                 Role = fake.PickRandom<RoleEnum>(),
                 Endereco = EnderecoFaker.GetEndereco(),
                 Senha = fake.Internet.Password(8, true, "", "E-1y74"),
-                Telefone = fake.Phone.PhoneNumber("(71) 9####-####")
+                Telefone = fake.Phone.PhoneNumber("(71) 98###-####")
             };
         }
         public static async Task<UsuarioEntities> UsuarioEntitiesBaseAsync(UsuarioEntities request)
@@ -97,7 +97,7 @@ namespace CadastroUsuarioEmpresa.Testes.Fakers
                 Role = fake.PickRandom<RoleEnum>(),
                 Endereco = EnderecoFaker.GetEndereco(),
                 Senha = fake.Internet.Password(8, true, "", "E-1y74"),
-                Telefone = fake.Phone.PhoneNumber("(71) 9####-####")
+                Telefone = fake.Phone.PhoneNumber("(71) 98###-####")
             };
         }
 
