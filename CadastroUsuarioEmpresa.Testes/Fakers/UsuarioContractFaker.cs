@@ -2,11 +2,6 @@
 using Bogus.Extensions.Brazil;
 using CadastroUsuarioEmpresa.Domain.Contracts.Usuario;
 using CadastroUsuarioEmpresa.Domain.Enum;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CadastroUsuarioEmpresa.Testes.Fakers
 {

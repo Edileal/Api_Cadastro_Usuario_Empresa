@@ -62,10 +62,10 @@ namespace CadastroUsuarioEmpresa.Testes.Services
 
             var userRequest = UsuarioContractFaker.UsuarioCadastraRequest();
             userRequest.Nome = "";
-            var userRequestEntities = await UsuarioEntitiesFaker.UsuarioEntitiesBase(userRequest);
-            var resultUserRequest = UsuarioEntitiesFaker.UsuarioEntitiesBaseAsync(userRequestEntities);
+            var userRequestEntities = UsuarioEntitiesFaker.UsuarioEntitiesBase(userRequest);
+            //var resultUserRequest = UsuarioEntitiesFaker.UsuarioEntitiesBaseAsync(userRequestEntities);
 
-            _mockUsuarioRepository.Setup(mock => mock.Post(It.IsAny<UsuarioEntities>())).Returns(resultUserRequest);
+            _mockUsuarioRepository.Setup(mock => mock.Post(It.IsAny<UsuarioEntities>())).Returns(userRequestEntities);
 
             var service = new UsuarioService(_mockUsuarioRepository.Object, mapper);
 

@@ -3,6 +3,7 @@ using CadastroUsuarioEmpresa.Domain.Entities;
 using Bogus.Extensions.Brazil;
 using CadastroUsuarioEmpresa.Domain.Enum;
 using CadastroUsuarioEmpresa.Domain.Contracts.Usuario;
+using CadastroUsuarioEmpresa.Domain.Shared;
 
 namespace CadastroUsuarioEmpresa.Testes.Fakers
 {
@@ -15,18 +16,20 @@ namespace CadastroUsuarioEmpresa.Testes.Fakers
             return fake.IndexFaker;
 
         }
-        public static async Task<UsuarioEntities> GetUsuarioEntities()
+        public static UsuarioEntities GetUsuarioSenha(string senha)
         {
             return new UsuarioEntities()
             {
-                Cpf = fake.Person.Cpf(),
-                DataNascimento = fake.Person.DateOfBirth,
-                Email = fake.Person.Email,
+                Id = fake.IndexFaker,
                 Nome = fake.Person.FullName,
-                Role = fake.PickRandom<RoleEnum>(),
+                DataNascimento = fake.Person.DateOfBirth,
+                Cpf = fake.Person.Cpf(),
                 Endereco = EnderecoFaker.GetEndereco(),
-                Senha = fake.Internet.Password(8, true, "", "E-1y74"),
-                Telefone = fake.Phone.PhoneNumber("(71) 9####-####")
+                Email = fake.Person.Email,
+                Senha = Cryptography.Encrypt(senha),
+                Role = fake.PickRandom<RoleEnum>(),
+                Telefone = fake.Phone.PhoneNumber("(75) 9####-####")
+
             };
         }
 

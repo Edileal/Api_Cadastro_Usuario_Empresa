@@ -4,6 +4,7 @@ using CadastroUsuarioEmpresa.Domain.Interfaces.Repository;
 using CadastroUsuarioEmpresa.Services;
 using CadastroUsuarioEmpresa.Testes.CrossCutting;
 using CadastroUsuarioEmpresa.Testes.Fakers;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Moq;
 using System;
@@ -38,22 +39,17 @@ namespace CadastroUsuarioEmpresa.Testes.Services
         [Fact(DisplayName = "Login válido")]
         public async Task LoginValido()
         {
-           /* var user = UsuarioContractFaker.UsuarioCadastraRequest();
+            
+            var user = UsuarioContractFaker.UsuarioCadastraRequest();
+            user.Senha = "WsQ12356=";
 
             var service = new AutenticacaoService(_mockUsuarioRepository.Object);
 
-            _mockUsuarioRepository.Setup(mock => mock.GetByEmail(user.Email)).Returns(() => Task.FromResult(string.Empty));
+            _mockUsuarioRepository.Setup(mock => mock.GetByEmail(user.Email)).ReturnsAsync((UsuarioEntitiesFaker.GetUsuarioSenha(user.Senha)));
 
-            //var result = service.Login(user.Email, user.Senha);
-
-            try
-            {
-               await service.Login(user.Email, user.Senha);
-            }
-            catch (System.Exception)
-            {
-                Assert.True(false);
-            }*/
+            var result = await service.Login(user.Email, user.Senha);
+            Results.Ok();
+            //Assert.True(result.Any());
             
         }
     }

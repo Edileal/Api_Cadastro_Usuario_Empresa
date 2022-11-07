@@ -23,5 +23,23 @@ namespace CadastroUsuarioEmpresa.Testes.Fakers
                 Endereco = EnderecoContractFaker.GetEnderecoRequest()
             };
         }
+        public static async Task<IEnumerable<EmpresaResponse>> EmpresaResponseAsync()
+        {
+            var minhaLista = new List<EmpresaResponse>();
+
+            for (int i = 0; i < 5; i++)
+            {
+                minhaLista.Add(new EmpresaResponse()
+                {
+                    Id = i,
+                    Nome = Fake.Name.FirstName(),
+                    NomeFantasia = Fake.Company.CompanyName(),
+                    Endereco = EnderecoContractFaker.GetEnderecoRequest()
+
+                });
+            }
+
+            return minhaLista;
+        }
     }
 }

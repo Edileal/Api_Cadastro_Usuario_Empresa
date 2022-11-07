@@ -205,7 +205,7 @@ namespace CadastroUsuarioEmpresa.Services
             return true;
         }
 
-        private async Task<bool> ValidarSenha(string senha) //testar senha no swagger. 
+        private async Task<bool> ValidarSenha(string senha)  
         {
             var hasNumber = new Regex(@"[0-9]+");
             var hasUpperChar = new Regex(@"[A-Z]+");
