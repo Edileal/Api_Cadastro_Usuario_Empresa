@@ -54,7 +54,19 @@ namespace CadastroUsuarioEmpresa.Testes.Fakers
                 Endereco = EnderecoContractFaker.GetEnderecoRequest()
             };
         }
-
+        public static UsuarioRequest UsuarioRequest()
+        {
+            return new UsuarioRequest
+            {
+                Nome = Fake.Name.FirstName(),
+                Telefone = Fake.Phone.PhoneNumber("(71) 9####-####"),
+                Email = Fake.Person.Email,
+                DataNascimento = Fake.Person.DateOfBirth,
+                Role = Fake.PickRandom<RoleEnum>(),
+                Cpf = Fake.Person.Cpf(),
+                Endereco = EnderecoContractFaker.GetEnderecoRequest()
+            };
+        }
         public static UsuarioCadastraRequest UsuarioCadastraRequest()
         {
             return new UsuarioCadastraRequest
