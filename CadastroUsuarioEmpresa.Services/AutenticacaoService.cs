@@ -13,9 +13,9 @@ namespace CadastroUsuarioEmpresa.Services
             _usuarioRepository = usuarioRepository;
         }
 
-        public async Task<string> Login(string nome, string senha)
+        public async Task<string> Login(string email, string senha)
         {
-            var result = await _usuarioRepository.GetByEmail(nome);
+            var result = await _usuarioRepository.GetByEmail(email);
 
             var _senhaCriptografada = Cryptography.Encrypt(senha);
 

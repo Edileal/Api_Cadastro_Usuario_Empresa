@@ -70,7 +70,7 @@ namespace CadastroUsuarioEmpresa.Testes.Fakers
             };
         }
 
-        public static async Task<UsuarioResponse> UsuarioResponseBaseRequestAsync(string nome) //acho que não to usando isso.
+        public static async Task<UsuarioResponse> UsuarioResponseBaseRequestAsync(string nome)
         {
             return new UsuarioResponse()
             {
