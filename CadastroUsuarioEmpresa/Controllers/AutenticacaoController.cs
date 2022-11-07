@@ -13,7 +13,11 @@ namespace CadastroUsuarioEmpresa.Controllers
         {
             _autenticacaoService = autenticacaoService;
         }
-
+        /// <summary>
+        /// Essa rota te permite acessar o sistema com usuário e senha.
+        /// </summary>
+        /// <returns></returns>
+        /// <response code="200">Sucesso, e retorna um token</response>
         [HttpPost]
         public async Task<string> Login(string email, string senha)
         {

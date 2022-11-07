@@ -4,5 +4,91 @@
         <name>CadastroUsuarioEmpresa</name>
     </assembly>
     <members>
+        <member name="M:CadastroUsuarioEmpresa.Controllers.AutenticacaoController.Login(System.String,System.String)">
+            <summary>
+            Essa rota te permite acessar o sistema com usuário e senha.
+            </summary>
+            <returns></returns>
+            <response code="200">Sucesso, e retorna um token</response>
+        </member>
+        <member name="M:CadastroUsuarioEmpresa.Controllers.EmpresaController.Get">
+            <summary>
+            Essa rota te permite buscar todos as empresas cadastradas
+            </summary>
+            <returns></returns>
+            <response code="200">Sucesso, e retorna uma lista de elementos</response>
+        </member>
+        <member name="M:CadastroUsuarioEmpresa.Controllers.EmpresaController.GetById(System.Int32)">
+            <summary>
+            Essa rota retorna as empresas cadastrados por meio do Id. 
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+            <response code="200">Sucesso, retorna o elemento encontrado via ID</response>
+        </member>
+        <member name="M:CadastroUsuarioEmpresa.Controllers.EmpresaController.Post(CadastroUsuarioEmpresa.Domain.Contracts.Empresa.EmpresaRequest)">
+            <summary>
+            Essa rota permite que você cadastre uma empresa
+            </summary>
+            <returns></returns>
+            <response code="200">Sucesso, e cadastra empresa</response>
+        </member>
+        <member name="M:CadastroUsuarioEmpresa.Controllers.EmpresaController.Put(System.Int32,CadastroUsuarioEmpresa.Domain.Contracts.Empresa.EmpresaRequest)">
+            <summary>
+            Essa rota permite que voce modifique atributos da empresa
+            </summary>
+            <returns></returns>
+            <response code="200">Sucesso, e fez a modificacao da empresa</response>
+        </member>
+        <member name="M:CadastroUsuarioEmpresa.Controllers.EmpresaController.Delete(System.Int32)">
+            <summary>
+            Essa rota permite que voce Delete uma empresa
+            </summary>
+            <returns></returns>
+            <response code="200">Sucesso, e fez a delecao da empresa</response>
+        </member>
+        <member name="M:CadastroUsuarioEmpresa.Controllers.UsuarioController.Get">
+            <summary>
+            Essa rota te permite buscar todos os usuário cadastrados sem visualizar cpf.
+            </summary>
+            <returns></returns>
+            <response code="200">Sucesso, e retorna uma lista de elementos</response>
+        </member>
+        <member name="M:CadastroUsuarioEmpresa.Controllers.UsuarioController.GetAdmin">
+            <summary>
+            Essa rota te permite buscar todos os usuário cadastrados com a visualização do cpf
+            </summary>
+            <returns></returns>
+            <response code="200">Sucesso, retorna uma lista de elementos</response>
+        </member>
+        <member name="M:CadastroUsuarioEmpresa.Controllers.UsuarioController.GetById(System.Int32)">
+            <summary>
+            Essa rota retorna os usuarios Cadastrados por meio do Id. 
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+            <response code="200">Sucesso, retorna o elemento encontrado via ID</response>
+        </member>
+        <member name="M:CadastroUsuarioEmpresa.Controllers.UsuarioController.Post(CadastroUsuarioEmpresa.Domain.Contracts.Usuario.UsuarioCadastraRequest)">
+            <summary>
+            Essa rota permite que voce cadastre usuário
+            </summary>
+            <returns></returns>
+            <response code="200">Sucesso, e cadastra usuário</response>
+        </member>
+        <member name="M:CadastroUsuarioEmpresa.Controllers.UsuarioController.Put(System.Int32,CadastroUsuarioEmpresa.Domain.Contracts.Usuario.UsuarioRequest)">
+            <summary>
+            Essa rota permite que você modifique os atributos do usuário
+            </summary>
+            <returns></returns>
+            <response code="200">Sucesso, e fez a modificacao do usuario</response>
+        </member>
+        <member name="M:CadastroUsuarioEmpresa.Controllers.UsuarioController.Delete(System.Int32)">
+            <summary>
+            Essa rota permite que você delete um usuário
+            </summary>
+            <returns></returns>
+            <response code="200">Sucesso, e fez a deleção de usuário</response>
+        </member>
     </members>
 </doc>
