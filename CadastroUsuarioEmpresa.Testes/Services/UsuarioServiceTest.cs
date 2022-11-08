@@ -63,7 +63,7 @@ namespace CadastroUsuarioEmpresa.Testes.Services
             var userRequest = UsuarioContractFaker.UsuarioCadastraRequest();
             userRequest.Nome = "";
             var userRequestEntities = UsuarioEntitiesFaker.UsuarioEntitiesBase(userRequest);
-            
+            //var resultUserRequest = UsuarioEntitiesFaker.UsuarioEntitiesBaseAsync(userRequestEntities);
 
             _mockUsuarioRepository.Setup(mock => mock.Post(It.IsAny<UsuarioEntities>())).Returns(userRequestEntities);
 
@@ -85,7 +85,7 @@ namespace CadastroUsuarioEmpresa.Testes.Services
             var userRequest = UsuarioContractFaker.UsuarioCadastraRequest();
             userRequest.Senha = "1";
             var userRequestEntities = UsuarioEntitiesFaker.UsuarioEntitiesBase(userRequest);
-            
+            //var resultUserRequest = UsuarioEntitiesFaker.UsuarioEntitiesBaseAsync(userRequestEntities);
 
             _mockUsuarioRepository.Setup(mock => mock.Post(It.IsAny<UsuarioEntities>())).Returns(userRequestEntities);
 
@@ -112,7 +112,7 @@ namespace CadastroUsuarioEmpresa.Testes.Services
             var userRequest = UsuarioContractFaker.UsuarioCadastraRequest();
             userRequest.Email = "e";
             var userRequestEntities = UsuarioEntitiesFaker.UsuarioEntitiesBase(userRequest);
-            
+            //var resultUserRequest = UsuarioEntitiesFaker.UsuarioEntitiesBaseAsync(userRequestEntities);
 
             _mockUsuarioRepository.Setup(mock => mock.Post(It.IsAny<UsuarioEntities>())).Returns(userRequestEntities);
 
@@ -134,7 +134,7 @@ namespace CadastroUsuarioEmpresa.Testes.Services
             var userRequest = UsuarioContractFaker.UsuarioCadastraRequest();
             userRequest.DataNascimento = DateTime.Now;
             var userRequestEntities = UsuarioEntitiesFaker.UsuarioEntitiesBase(userRequest);
-            
+            //var resultUserRequest = UsuarioEntitiesFaker.UsuarioEntitiesBaseAsync(userRequestEntities);
 
             _mockUsuarioRepository.Setup(mock => mock.Post(It.IsAny<UsuarioEntities>())).Returns(userRequestEntities);
 
@@ -156,7 +156,7 @@ namespace CadastroUsuarioEmpresa.Testes.Services
             var userRequest = UsuarioContractFaker.UsuarioCadastraRequest();
             userRequest.Cpf = "12345678";
             var userRequestEntities = UsuarioEntitiesFaker.UsuarioEntitiesBase(userRequest);
-            
+            //var resultUserRequest = UsuarioEntitiesFaker.UsuarioEntitiesBaseAsync(userRequestEntities);
 
             _mockUsuarioRepository.Setup(mock => mock.Post(It.IsAny<UsuarioEntities>())).Returns(userRequestEntities);
 
@@ -178,7 +178,7 @@ namespace CadastroUsuarioEmpresa.Testes.Services
             var userRequest = UsuarioContractFaker.UsuarioCadastraRequest();
             userRequest.Endereco.Cidade = null;
             var userRequestEntities = UsuarioEntitiesFaker.UsuarioEntitiesBase(userRequest);
-            
+            //var resultUserRequest = UsuarioEntitiesFaker.UsuarioEntitiesBaseAsync(userRequestEntities);
 
             _mockUsuarioRepository.Setup(mock => mock.Post(It.IsAny<UsuarioEntities>())).Returns(userRequestEntities);
 
@@ -200,7 +200,7 @@ namespace CadastroUsuarioEmpresa.Testes.Services
             var userRequest = UsuarioContractFaker.UsuarioCadastraRequest();
             userRequest.Endereco.Rua = null;
             var userRequestEntities = UsuarioEntitiesFaker.UsuarioEntitiesBase(userRequest);
-            
+            //var resultUserRequest = UsuarioEntitiesFaker.UsuarioEntitiesBaseAsync(userRequestEntities);
 
             _mockUsuarioRepository.Setup(mock => mock.Post(It.IsAny<UsuarioEntities>())).Returns(userRequestEntities);
 
@@ -222,7 +222,7 @@ namespace CadastroUsuarioEmpresa.Testes.Services
             var userRequest = UsuarioContractFaker.UsuarioCadastraRequest();
             userRequest.Endereco.Bairro = null;
             var userRequestEntities = UsuarioEntitiesFaker.UsuarioEntitiesBase(userRequest);
-            
+            //var resultUserRequest = UsuarioEntitiesFaker.UsuarioEntitiesBaseAsync(userRequestEntities);
 
             _mockUsuarioRepository.Setup(mock => mock.Post(It.IsAny<UsuarioEntities>())).Returns(userRequestEntities);
 
@@ -244,7 +244,7 @@ namespace CadastroUsuarioEmpresa.Testes.Services
             var userRequest = UsuarioContractFaker.UsuarioCadastraRequest();
             userRequest.Endereco.Cep = "12";
             var userRequestEntities = UsuarioEntitiesFaker.UsuarioEntitiesBase(userRequest);
-            
+            //var resultUserRequest = UsuarioEntitiesFaker.UsuarioEntitiesBaseAsync(userRequestEntities);
 
             _mockUsuarioRepository.Setup(mock => mock.Post(It.IsAny<UsuarioEntities>())).Returns(userRequestEntities);
 
@@ -266,7 +266,7 @@ namespace CadastroUsuarioEmpresa.Testes.Services
             var userRequest = UsuarioContractFaker.UsuarioCadastraRequest();
             userRequest.Endereco.Numero = "";
             var userRequestEntities = UsuarioEntitiesFaker.UsuarioEntitiesBase(userRequest);
-            
+            //var resultUserRequest = UsuarioEntitiesFaker.UsuarioEntitiesBaseAsync(userRequestEntities);
 
             _mockUsuarioRepository.Setup(mock => mock.Post(It.IsAny<UsuarioEntities>())).Returns(userRequestEntities);
 
@@ -288,7 +288,7 @@ namespace CadastroUsuarioEmpresa.Testes.Services
             var userRequest = UsuarioContractFaker.UsuarioCadastraRequest();
             userRequest.Endereco.Estado = "";
             var userRequestEntities = UsuarioEntitiesFaker.UsuarioEntitiesBase(userRequest);
-            
+            //var resultUserRequest = UsuarioEntitiesFaker.UsuarioEntitiesBaseAsync(userRequestEntities);
 
             _mockUsuarioRepository.Setup(mock => mock.Post(It.IsAny<UsuarioEntities>())).Returns(userRequestEntities);
 
@@ -309,7 +309,7 @@ namespace CadastroUsuarioEmpresa.Testes.Services
 
             var userRequest = UsuarioContractFaker.UsuarioCadastraRequest();
             var userRequestEntities = UsuarioEntitiesFaker.UsuarioEntitiesBase(userRequest);
-            
+            //var resultUserRequest = UsuarioEntitiesFaker.UsuarioEntitiesBaseAsync(userRequestEntities);
 
             _mockUsuarioRepository.Setup(mock => mock.GetById(It.IsAny<int>())).Returns(userRequestEntities);
             _mockUsuarioRepository.Setup(mock => mock.Put(It.IsAny<UsuarioEntities>(), It.IsAny<int?>())).Returns(userRequestEntities);
